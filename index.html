@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>清爽记账 - 本地极速记账</title>
+  
+  <!-- PWA & Mobile Meta -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#10B981">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="清爽记账">
+  <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <!-- Local Vue 3 -->
+  <script src="lib/vue.global.js"></script>
+
+  <style>
+    :root {
+      --primary: #10B981;
+      --primary-dark: #059669;
+      --primary-light: #D1FAE5;
+      --danger: #EF4444;
+      --warning: #F59E0B;
+      --bg: #F8FAFC;
+      --card-bg: #FFFFFF;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background-color: #0F172A;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Mobile Container Frame */
+    #app {
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      max-height: 940px;
+      background-color: var(--bg);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 480px) {
+      #app {
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100%;
+        box-shadow: none;
+      }
+    }
+
+    /* Scrollable main body */
+    .main-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: calc(12px + var(--safe-top)) 16px calc(80px + var(--safe-bottom)) 16px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Hide scrollbars */
+    .main-content::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .month-picker-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0F172A;
+      cursor: pointer;
+      background: #FFFFFF;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    /* Header Summary Card */
+    .summary-card {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+      color: white;
+      border-radius: 22px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .summary-card::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      pointer-events: none;
+    }
+
+    .summary-title {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 4px;
+    }
+
+    .summary-expense {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 14px;
+    }
+
+    .summary-grid-val {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* Filter & Search Pills */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+    .filter-bar::-webkit-scrollbar { display: none; }
+
+    .pill-btn {
+      padding: 6px 14px;
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 18px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .pill-btn.active {
+      background: #0F172A;
+      color: #FFFFFF;
+      border-color: #0F172A;
+    }
+
+    /* Grouped Transaction List */
+    .date-group {
+      margin-bottom: 18px;
+    }
+    .date-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      padding: 0 4px;
+    }
+
+    .trans-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .trans-item {
+      display: flex;
+      align-items: center;
+      padding: 13px 14px;
+      border-bottom: 1px solid #F1F5F9;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .trans-item:last-child {
+      border-bottom: none;
+    }
+    .trans-item:active {
+      background: #F8FAFC;
+    }
+
+    .item-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-right: 12px;
+      flex-shrink: 0;
+    }
+
+    .item-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .item-acc-tag {
+      font-size: 0.7rem;
+      padding: 1px 6px;
+      background: #F1F5F9;
+      color: #64748B;
+      border-radius: 6px;
+      font-weight: 400;
+    }
+    .item-remark {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .item-amount {
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-align: right;
+    }
+    .amount-expense {
+      color: #0F172A;
+    }
+    .amount-income {
+      color: #10B981;
+    }
+    .amount-transfer {
+      color: #6366F1;
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: calc(64px + var(--safe-bottom));
+      padding-bottom: var(--safe-bottom);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 50;
+    }
+
+    .nav-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 500;
+      gap: 3px;
+      cursor: pointer;
+      width: 54px;
+      background: none;
+      border: none;
+    }
+    .nav-btn.active {
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+    .nav-icon {
+      font-size: 1.3rem;
+    }
+
+    .add-btn-wrap {
+      position: relative;
+      top: -12px;
+    }
+    .add-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      border: 4px solid #FFFFFF;
+      box-shadow: 0 8px 16px rgba(16, 185, 129, 0.4);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    .add-btn:active {
+      transform: scale(0.92);
+    }
+
+    /* Add/Edit Modal (Keypad & Categories) */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .sheet-container {
+      background: #FFFFFF;
+      border-radius: 26px 26px 0 0;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      padding-bottom: var(--safe-bottom);
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .sheet-header {
+      padding: 14px 18px 8px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .type-tab-group {
+      display: flex;
+      background: #F1F5F9;
+      border-radius: 20px;
+      padding: 3px;
+    }
+    .type-tab {
+      padding: 6px 18px;
+      border-radius: 16px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .type-tab.active {
+      background: #FFFFFF;
+      color: #0F172A;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    }
+
+    .close-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #F1F5F9;
+      border: none;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #64748B;
+    }
+
+    /* Display input bar */
+    .amount-display-bar {
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FAFAFA;
+      border-bottom: 1px solid #F1F5F9;
+    }
+    .selected-cat-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .selected-cat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .display-amount {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.5px;
+    }
+
+    /* Categories Grid */
+    .cat-scroll-box {
+      max-height: 180px;
+      overflow-y: auto;
+      padding: 12px 14px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    .cat-scroll-box::-webkit-scrollbar { display: none; }
+
+    .cat-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 4px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+    .cat-btn:active { background: #F1F5F9; }
+    .cat-btn.selected {
+      background: #EFF6FF;
+    }
+    .cat-btn-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    }
+    .cat-btn-label {
+      font-size: 0.75rem;
+      color: #334155;
+      font-weight: 500;
+    }
+
+    /* Meta bar (Account, Date, Note) */
+    .meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      background: #FFFFFF;
+      border-top: 1px solid #F1F5F9;
+      font-size: 0.82rem;
+    }
+    .meta-chip {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: #F8FAFC;
+      border: 1px solid var(--border);
+      padding: 5px 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .meta-note-input {
+      flex: 1;
+      border: none;
+      background: #F8FAFC;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    /* Calculator Keypad */
+    .keypad-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 52px);
+      gap: 4px;
+      padding: 8px;
+      background: #F1F5F9;
+    }
+    .key-btn {
+      background: #FFFFFF;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      transition: background 0.1s;
+    }
+    .key-btn:active {
+      background: #E2E8F0;
+    }
+    .key-op {
+      background: #F8FAFC;
+      color: #475569;
+    }
+    .key-submit {
+      background: #10B981;
+      color: #FFFFFF;
+      grid-column: 4;
+      grid-row: 3 / span 2;
+      font-size: 1.15rem;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    }
+    .key-submit:active {
+      background: #059669;
+    }
+
+    /* Cards in other tabs */
+    .stat-card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .card-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Progress bar */
+    .progress-bar-bg {
+      height: 10px;
+      background: #F1F5F9;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 10px 0;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 8px;
+      transition: width 0.3s ease;
+    }
+
+    /* Custom Toast */
+    .toast-msg {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      z-index: 999;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+
+    /* Utility */
+    .btn-block {
+      width: 100%;
+      padding: 12px;
+      border-radius: 14px;
+      border: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .btn-primary { background: #10B981; color: white; }
+    .btn-secondary { background: #F1F5F9; color: #334155; }
+    .btn-danger { background: #FEE2E2; color: #DC2626; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Toast message -->
+    <div v-if="toast" class="toast-msg">{{ toast }}</div>
+
+    <!-- MAIN SCROLLABLE VIEW -->
+    <main class="main-content">
+      
+      <!-- TAB 1: 明细 (Transactions) -->
+      <div v-show="activeTab === 'records'">
+        <!-- Top month bar -->
+        <div class="top-bar">
+          <div class="month-picker-btn" @click="changeMonthPrompt">
+            <span>📅 {{ currentYear }}年{{ currentMonth }}月</span>
+            <span style="font-size: 0.8rem; color: #94A3B8;">▼</span>
+          </div>
+          <div style="font-size: 0.78rem; color: #64748B;">
+            累计记账 <b>{{ transactions.length }}</b> 笔
+          </div>
+        </div>
+
+        <!-- Month Summary Card -->
+        <div class="summary-card">
+          <div class="summary-title">本月总支出 (元)</div>
+          <div class="summary-expense">¥{{ formatNumber(monthStats.expense) }}</div>
+          <div class="summary-grid">
+            <div>
+              <div class="summary-title">本月收入</div>
+              <div class="summary-grid-val">+¥{{ formatNumber(monthStats.income) }}</div>
+            </div>
+            <div>
+              <div class="summary-title">本月结余</div>
+              <div class="summary-grid-val" :style="{ color: monthStats.balance >= 0 ? '#FFFFFF' : '#FECACA' }">
+                {{ monthStats.balance >= 0 ? '' : '-' }}¥{{ formatNumber(Math.abs(monthStats.balance)) }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick filter buttons -->
+        <div class="filter-bar">
+          <button class="pill-btn" :class="{ active: filterType === 'all' }" @click="filterType = 'all'">全部</button>
+          <button class="pill-btn" :class="{ active: filterType === 'expense' }" @click="filterType = 'expense'">仅支出</button>
+          <button class="pill-btn" :class="{ active: filterType === 'income' }" @click="filterType = 'income'">仅收入</button>
+          <button class="pill-btn" :class="{ active: filterType === 'transfer' }" @click="filterType = 'transfer'">转账</button>
+          <button class="pill-btn" @click="promptSearch">{{ searchQuery ? `搜索: "${searchQuery}" ✕` : '🔍 搜索备注' }}</button>
+        </div>
+
+        <!-- Empty State -->
+        <div v-if="filteredGroupedTransactions.length === 0" style="text-align: center; padding: 48px 16px; color: #94A3B8;">
+          <div style="font-size: 3rem; margin-bottom: 12px;">📑</div>
+          <p style="font-weight: 600; color: #64748B;">本月暂无记账明细</p>
+          <p style="font-size: 0.8rem; margin-top: 4px;">点击下方中间的「+」号开始记一笔吧</p>
+        </div>
+
+        <!-- Transaction Groups by Date -->
+        <div v-for="group in filteredGroupedTransactions" :key="group.date" class="date-group">
+          <div class="date-header">
+            <span>{{ group.dateStr }} · {{ group.weekday }}</span>
+            <span>
+              <span v-if="group.totalExpense > 0">支出 ¥{{ formatNumber(group.totalExpense) }} </span>
+              <span v-if="group.totalIncome > 0" style="color: #10B981; margin-left: 6px;">收入 +¥{{ formatNumber(group.totalIncome) }}</span>
+            </span>
+          </div>
+
+          <div class="trans-card">
+            <div 
+              v-for="item in group.items" 
+              :key="item.id" 
+              class="trans-item" 
+              @click="openItemDetail(item)"
+            >
+              <div class="item-icon" :style="{ backgroundColor: getCategoryBg(item) }">
+                {{ getCategoryIcon(item) }}
+              </div>
+              <div class="item-info">
+                <div class="item-title">
+                  <span>{{ item.category }}</span>
+                  <span class="item-acc-tag">{{ getAccountName(item.accountId) }}</span>
+                  <span v-if="item.type === 'transfer'" class="item-acc-tag" style="background: #EEF2FF; color: #4F46E5;">
+                    ➔ {{ getAccountName(item.targetAccountId) }}
+                  </span>
+                </div>
+                <div class="item-remark">{{ item.remark || getCategoryName(item) }}</div>
+              </div>
+              <div 
+                class="item-amount" 
+                :class="item.type === 'expense' ? 'amount-expense' : (item.type === 'income' ? 'amount-income' : 'amount-transfer')"
+              >
+                {{ item.type === 'expense' ? '-' : (item.type === 'income' ? '+' : '') }}¥{{ formatNumber(item.amount) }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: 统计 (Statistics) -->
+      <div v-show="activeTab === 'stats'">
+        <div class="top-bar">
+          <div class="month-picker-btn" @click="changeMonthPrompt">
+            <span>📊 {{ currentYear }}年{{ currentMonth }}月 统计</span>
+          </div>
+          <div class="type-tab-group" style="scale: 0.9;">
+            <div class="type-tab" :class="{ active: statTab === 'expense' }" @click="statTab = 'expense'">支出</div>
+            <div class="type-tab" :class="{ active: statTab === 'income' }" @click="statTab = 'income'">收入</div>
+          </div>
+        </div>
+
+        <!-- Metric Highlights -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px;">
+          <div class="stat-card" style="margin-bottom: 0;">
+            <div style="font-size: 0.75rem; color: #64748B;">日均{{ statTab === 'expense' ? '支出' : '收入' }}</div>
+            <div style="font-size: 1.35rem; font-weight: 800; color: #0F172A; margin-top: 4px;">
+              ¥{{ formatNumber(statDailyAverage) }}
+            </div>
+          </div>
+          <div class="stat-card" style="margin-bottom: 0;">
+            <div style="font-size: 0.75rem; color: #64748B;">最大单笔</div>
+            <div style="font-size: 1.35rem; font-weight: 800; color: #0F172A; margin-top: 4px;">
+              ¥{{ formatNumber(statMaxSingle) }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Category Composition Donut/Pie Chart -->
+        <div class="stat-card">
+          <div class="card-title">
+            <span>{{ statTab === 'expense' ? '支出' : '收入' }}分类构成</span>
+            <span style="font-size: 0.8rem; color: #64748B;">共 ¥{{ formatNumber(statTotalAmount) }}</span>
+          </div>
+
+          <!-- Pure SVG Donut Chart -->
+          <div style="display: flex; align-items: center; justify-content: center; padding: 10px 0;">
+            <svg width="180" height="180" viewBox="0 0 100 100" style="transform: rotate(-90deg);">
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="#F1F5F9" stroke-width="14" />
+              <circle 
+                v-for="slice in statDonutSlices" 
+                :key="slice.category"
+                cx="50" 
+                cy="50" 
+                r="38" 
+                fill="transparent" 
+                :stroke="slice.color" 
+                stroke-width="14"
+                :stroke-dasharray="`${slice.strokeLength} ${100 * 2.387}`"
+                :stroke-dashoffset="slice.offset"
+              />
+            </svg>
+          </div>
+
+          <!-- Breakdown List -->
+          <div style="margin-top: 14px;">
+            <div v-if="statBreakdown.length === 0" style="text-align: center; color: #94A3B8; padding: 20px 0; font-size: 0.85rem;">
+              暂无分类数据
+            </div>
+            <div v-for="item in statBreakdown" :key="item.category" style="margin-bottom: 12px;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                <span style="display: flex; align-items: center; gap: 6px;">
+                  <span style="width: 10px; height: 10px; border-radius: 50%;" :style="{ background: item.color }"></span>
+                  <span style="font-weight: 600;">{{ item.category }}</span>
+                  <span style="color: #64748B; font-size: 0.75rem;">{{ item.percentage }}%</span>
+                </span>
+                <span style="font-weight: 700;">¥{{ formatNumber(item.amount) }}</span>
+              </div>
+              <div class="progress-bar-bg" style="margin: 0;">
+                <div class="progress-fill" :style="{ width: item.percentage + '%', background: item.color }"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daily Spending Bar Chart -->
+        <div class="stat-card">
+          <div class="card-title">每日收支走势</div>
+          <div style="display: flex; align-items: flex-end; gap: 4px; height: 120px; padding-top: 10px; overflow-x: auto;">
+            <div 
+              v-for="d in statDailyBars" 
+              :key="d.day" 
+              style="flex: 1; min-width: 12px; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end;"
+            >
+              <div 
+                :style="{ 
+                  height: d.heightPercent + '%', 
+                  backgroundColor: d.amount > 0 ? (statTab === 'expense' ? '#3B82F6' : '#10B981') : '#F1F5F9',
+                  width: '100%',
+                  borderRadius: '3px 3px 0 0'
+                }"
+                :title="`${d.day}日: ¥${d.amount}`"
+              ></div>
+              <span style="font-size: 0.6rem; color: #94A3B8; margin-top: 4px;">{{ d.day }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: 预算 (Budget) -->
+      <div v-show="activeTab === 'budget'">
+        <div class="top-bar">
+          <div class="month-picker-btn">
+            <span>🎯 {{ currentYear }}年{{ currentMonth }}月 预算中心</span>
+          </div>
+          <button class="pill-btn active" @click="setBudgetPrompt">调整总预算</button>
+        </div>
+
+        <!-- Total Budget Card -->
+        <div class="stat-card" style="border: 2px solid #E2E8F0;">
+          <div class="card-title">
+            <span>当月总预算</span>
+            <span style="color: #10B981; font-weight: 800;">¥{{ formatNumber(budgetData.monthlyLimit) }}</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div 
+              class="progress-fill" 
+              :style="{ 
+                width: Math.min(100, budgetPercent) + '%', 
+                background: budgetPercent > 100 ? '#EF4444' : (budgetPercent > 80 ? '#F59E0B' : '#10B981')
+              }"
+            ></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: #64748B; margin-top: 6px;">
+            <span>已用: <b>¥{{ formatNumber(monthStats.expense) }}</b> ({{ budgetPercent }}%)</span>
+            <span>剩余可用: <b :style="{ color: remainingBudget >= 0 ? '#10B981' : '#EF4444' }">¥{{ formatNumber(remainingBudget) }}</b></span>
+          </div>
+          
+          <div style="margin-top: 14px; padding: 12px; background: #F8FAFC; border-radius: 12px; font-size: 0.8rem; color: #475569; display: flex; justify-content: space-between;">
+            <span>💡 距离月末还有 <b>{{ remainingDaysInMonth }}</b> 天</span>
+            <span>日均可用上限: <b>¥{{ formatNumber(dailyBudgetAllowance) }}</b></span>
+          </div>
+        </div>
+
+        <!-- Category Budgets -->
+        <div class="stat-card">
+          <div class="card-title">
+            <span>重点分类预算</span>
+            <span style="font-size: 0.75rem; color: #64748B;">点击分类可设置单独限额</span>
+          </div>
+          <div v-for="cat in categoryBudgetList" :key="cat.name" style="margin-bottom: 14px; cursor: pointer;" @click="setCatBudgetPrompt(cat)">
+            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+              <span>{{ cat.icon }} {{ cat.name }}</span>
+              <span>
+                <b>¥{{ formatNumber(cat.spent) }}</b> / ¥{{ formatNumber(cat.limit) }}
+                <span :style="{ color: cat.spent > cat.limit ? '#EF4444' : '#64748B' }">({{ cat.percent }}%)</span>
+              </span>
+            </div>
+            <div class="progress-bar-bg" style="margin: 0;">
+              <div 
+                class="progress-fill" 
+                :style="{ 
+                  width: Math.min(100, cat.percent) + '%', 
+                  background: cat.spent > cat.limit ? '#EF4444' : (cat.percent > 80 ? '#F59E0B' : '#3B82F6')
+                }"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: 账户与资产 (Accounts) -->
+      <div v-show="activeTab === 'accounts'">
+        <div class="top-bar">
+          <div class="month-picker-btn">
+            <span>💳 账户与资产</span>
+          </div>
+          <button class="pill-btn active" @click="showAddAccountModal = true">+ 添加账户</button>
+        </div>
+
+        <!-- Net Assets Card -->
+        <div class="summary-card" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);">
+          <div class="summary-title">净资产 (元)</div>
+          <div class="summary-expense">¥{{ formatNumber(netAssets) }}</div>
+          <div class="summary-grid">
+            <div>
+              <div class="summary-title">总资产</div>
+              <div class="summary-grid-val" style="color: #34D399;">¥{{ formatNumber(totalAssets) }}</div>
+            </div>
+            <div>
+              <div class="summary-title">总负债 (信用卡等)</div>
+              <div class="summary-grid-val" style="color: #F87171;">¥{{ formatNumber(totalLiabilities) }}</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Account List -->
+        <div class="stat-card">
+          <div class="card-title">资金账户列表</div>
+          <div v-for="acc in accounts" :key="acc.id" class="trans-item" style="padding: 12px 0;" @click="editAccountPrompt(acc)">
+            <div class="item-icon" :style="{ backgroundColor: acc.bgColor || '#E0E7FF' }">
+              {{ acc.icon || '💰' }}
+            </div>
+            <div class="item-info">
+              <div class="item-title">
+                <span>{{ acc.name }}</span>
+                <span class="item-acc-tag" :style="{ background: acc.type === 'liability' ? '#FEE2E2' : '#F1F5F9', color: acc.type === 'liability' ? '#DC2626' : '#64748B' }">
+                  {{ acc.type === 'liability' ? '负债账户' : '资产账户' }}
+                </span>
+              </div>
+              <div class="item-remark">卡号/备注: {{ acc.remark || '默认主账户' }}</div>
+            </div>
+            <div class="item-amount" :style="{ color: acc.balance >= 0 ? '#0F172A' : '#EF4444' }">
+              ¥{{ formatNumber(acc.balance) }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Data & Settings -->
+        <div class="stat-card">
+          <div class="card-title">⚙️ 数据备份与管理 (完全本地)</div>
+          <p style="font-size: 0.78rem; color: #64748B; margin-bottom: 12px;">
+            您的所有账本数据仅保存在本设备中，无任何云端上传，安全无广告。建议定期导出备份。
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <button class="btn-block btn-secondary" @click="exportJSON">📥 导出数据备份</button>
+            <button class="btn-block btn-secondary" @click="triggerImportJSON">📤 导入恢复数据</button>
+            <button class="btn-block btn-secondary" @click="exportCSV">📊 导出Excel流水</button>
+            <button class="btn-block btn-secondary" @click="resetSampleData">🔄 载入示例数据</button>
+          </div>
+          <input type="file" ref="fileInput" accept=".json" style="display: none;" @change="handleFileImport">
+
+          <button class="btn-block btn-danger" style="margin-top: 12px;" @click="clearAllDataPrompt">⚠️ 清空所有本地账本数据</button>
+        </div>
+
+        <!-- Android / PWA Guide Banner -->
+        <div class="stat-card" style="background: #F0FDF4; border-color: #BBF7D0;">
+          <div style="font-weight: 700; color: #166534; font-size: 0.9rem; margin-bottom: 6px;">📱 如何在手机上像原生 App 一样使用？</div>
+          <p style="font-size: 0.78rem; color: #15803D; line-height: 1.5;">
+            1. 在手机浏览器（Chrome、Edge、Safari、夸克等）中打开此网页<br>
+            2. 点击浏览器菜单中的「<b>添加到主屏幕</b>」或「<b>安装应用</b>」<br>
+            3. 手机桌面将自动生成应用图标，全屏离线秒开，体验与原生 APK 无异！
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+      <button class="nav-btn" :class="{ active: activeTab === 'records' }" @click="activeTab = 'records'">
+        <span class="nav-icon">📑</span>
+        <span>明细</span>
+      </button>
+      <button class="nav-btn" :class="{ active: activeTab === 'stats' }" @click="activeTab = 'stats'">
+        <span class="nav-icon">📊</span>
+        <span>统计</span>
+      </button>
+
+      <!-- Center Big Add Button -->
+      <div class="add-btn-wrap">
+        <button class="add-btn" @click="openAddModal">＋</button>
+      </div>
+
+      <button class="nav-btn" :class="{ active: activeTab === 'budget' }" @click="activeTab = 'budget'">
+        <span class="nav-icon">🎯</span>
+        <span>预算</span>
+      </button>
+      <button class="nav-btn" :class="{ active: activeTab === 'accounts' }" @click="activeTab = 'accounts'">
+        <span class="nav-icon">💳</span>
+        <span>资产</span>
+      </button>
+    </nav>
+
+    <!-- RECORD / ADD MODAL -->
+    <div v-if="showRecordModal" class="modal-overlay" @click.self="showRecordModal = false">
+      <div class="sheet-container">
+        <!-- Sheet Header -->
+        <div class="sheet-header">
+          <div class="type-tab-group">
+            <div class="type-tab" :class="{ active: currentForm.type === 'expense' }" @click="switchFormType('expense')">支出</div>
+            <div class="type-tab" :class="{ active: currentForm.type === 'income' }" @click="switchFormType('income')">收入</div>
+            <div class="type-tab" :class="{ active: currentForm.type === 'transfer' }" @click="switchFormType('transfer')">转账</div>
+          </div>
+          <button class="close-btn" @click="showRecordModal = false">✕</button>
+        </div>
+
+        <!-- Amount & Category Display -->
+        <div class="amount-display-bar">
+          <div class="selected-cat-info">
+            <div class="selected-cat-icon" :style="{ backgroundColor: currentCategoryBg }">
+              {{ currentCategoryIcon }}
+            </div>
+            <div>
+              <div style="font-weight: 700; font-size: 0.95rem;">{{ currentForm.category }}</div>
+              <div style="font-size: 0.72rem; color: #64748B;">{{ currentForm.type === 'expense' ? '支出款项' : (currentForm.type === 'income' ? '收入来源' : '账户互转') }}</div>
+            </div>
+          </div>
+          <div class="display-amount">
+            <span style="font-size: 1.3rem; margin-right: 2px;">¥</span>{{ keyExpr || '0' }}
+          </div>
+        </div>
+
+        <!-- Category Selector (for expense/income) -->
+        <div v-if="currentForm.type !== 'transfer'" class="cat-scroll-box">
+          <div 
+            v-for="cat in availableCategories" 
+            :key="cat.name" 
+            class="cat-btn"
+            :class="{ selected: currentForm.category === cat.name }"
+            @click="selectCategory(cat)"
+          >
+            <div class="cat-btn-icon" :style="{ backgroundColor: cat.bg }">
+              {{ cat.icon }}
+            </div>
+            <span class="cat-btn-label">{{ cat.name }}</span>
+          </div>
+        </div>
+
+        <!-- Transfer Account Pair (for transfer) -->
+        <div v-else style="padding: 16px 20px; display: flex; align-items: center; justify-content: space-around; background: #F8FAFC;">
+          <div>
+            <div style="font-size: 0.75rem; color: #64748B; margin-bottom: 4px;">转出账户</div>
+            <select v-model="currentForm.accountId" style="padding: 6px 12px; border-radius: 10px; border: 1px solid var(--border); font-weight: 600;">
+              <option v-for="acc in accounts" :key="acc.id" :value="acc.id">{{ acc.name }} (¥{{ acc.balance }})</option>
+            </select>
+          </div>
+          <div style="font-size: 1.5rem; color: #6366F1;">➔</div>
+          <div>
+            <div style="font-size: 0.75rem; color: #64748B; margin-bottom: 4px;">转入账户</div>
+            <select v-model="currentForm.targetAccountId" style="padding: 6px 12px; border-radius: 10px; border: 1px solid var(--border); font-weight: 600;">
+              <option v-for="acc in accounts" :key="acc.id" :value="acc.id">{{ acc.name }} (¥{{ acc.balance }})</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Meta Bar: Account, Date, Note -->
+        <div class="meta-bar">
+          <div v-if="currentForm.type !== 'transfer'" class="meta-chip" @click="cycleAccount">
+            <span>💳</span>
+            <span>{{ getAccountName(currentForm.accountId) }}</span>
+          </div>
+          <div class="meta-chip">
+            <span>📅</span>
+            <input type="date" v-model="currentForm.date" style="border: none; background: transparent; font-size: 0.78rem; outline: none;">
+          </div>
+          <input 
+            type="text" 
+            class="meta-note-input" 
+            placeholder="添加备注（如：麦当劳、打车）" 
+            v-model="currentForm.remark"
+          >
+        </div>
+
+        <!-- Built-in Numeric Keypad -->
+        <div class="keypad-grid">
+          <button class="key-btn" @click="pressKey('7')">7</button>
+          <button class="key-btn" @click="pressKey('8')">8</button>
+          <button class="key-btn" @click="pressKey('9')">9</button>
+          <button class="key-btn key-op" @click="pressKey('backspace')">⌫</button>
+
+          <button class="key-btn" @click="pressKey('4')">4</button>
+          <button class="key-btn" @click="pressKey('5')">5</button>
+          <button class="key-btn" @click="pressKey('6')">6</button>
+          <button class="key-btn key-op" @click="pressKey('+')">+</button>
+
+          <button class="key-btn" @click="pressKey('1')">1</button>
+          <button class="key-btn" @click="pressKey('2')">2</button>
+          <button class="key-btn" @click="pressKey('3')">3</button>
+          <button class="key-btn key-submit" @click="submitRecord">完成</button>
+
+          <button class="key-btn key-op" @click="pressKey('clear')">C</button>
+          <button class="key-btn" @click="pressKey('0')">0</button>
+          <button class="key-btn" @click="pressKey('.')">.</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM DETAIL / EDIT MODAL -->
+    <div v-if="selectedItem" class="modal-overlay" @click.self="selectedItem = null">
+      <div class="sheet-container" style="padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-size: 1.1rem; font-weight: 700;">账单明细</h3>
+          <button class="close-btn" @click="selectedItem = null">✕</button>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div class="selected-cat-icon" style="margin: 0 auto 10px auto; width: 56px; height: 56px; font-size: 1.8rem;" :style="{ backgroundColor: getCategoryBg(selectedItem) }">
+            {{ getCategoryIcon(selectedItem) }}
+          </div>
+          <div style="font-size: 1.1rem; font-weight: 600;">{{ selectedItem.category }}</div>
+          <div style="font-size: 2.2rem; font-weight: 800; margin-top: 6px;" :class="selectedItem.type === 'expense' ? 'amount-expense' : 'amount-income'">
+            {{ selectedItem.type === 'expense' ? '-' : '+' }}¥{{ formatNumber(selectedItem.amount) }}
+          </div>
+        </div>
+
+        <div style="background: #F8FAFC; border-radius: 16px; padding: 14px; font-size: 0.88rem; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="color: #64748B;">记录时间</span>
+            <span style="font-weight: 600;">{{ selectedItem.date }}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span style="color: #64748B;">关联账户</span>
+            <span style="font-weight: 600;">{{ getAccountName(selectedItem.accountId) }}</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: #64748B;">备注说明</span>
+            <span style="font-weight: 600;">{{ selectedItem.remark || '无' }}</span>
+          </div>
+        </div>
+
+        <button class="btn-block btn-danger" @click="deleteItem(selectedItem)">🗑️ 删除这笔记录</button>
+      </div>
+    </div>
+
+    <!-- ADD ACCOUNT MODAL -->
+    <div v-if="showAddAccountModal" class="modal-overlay" @click.self="showAddAccountModal = false">
+      <div class="sheet-container" style="padding: 24px;">
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;">添加新资金账户</h3>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div>
+            <label style="font-size: 0.8rem; color: #64748B;">账户名称</label>
+            <input type="text" v-model="newAcc.name" placeholder="如：建行工资卡、零钱通" style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px;">
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: #64748B;">账户类型</label>
+            <select v-model="newAcc.type" style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px;">
+              <option value="asset">资产账户（储蓄卡、微信、现金）</option>
+              <option value="liability">负债账户（信用卡、花呗）</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: #64748B;">当前初始余额 (元)</label>
+            <input type="number" v-model="newAcc.balance" placeholder="0.00" style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px;">
+          </div>
+          <button class="btn-block btn-primary" style="margin-top: 10px;" @click="saveNewAccount">保存账户</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const { createApp, ref, computed, onMounted, watch } = Vue;
+
+    // Preset categories with icons & colors
+    const EXPENSE_CATEGORIES = [
+      { name: '餐饮美食', icon: '🍜', bg: '#FEE2E2', color: '#EF4444' },
+      { name: '交通出行', icon: '🚗', bg: '#E0E7FF', color: '#6366F1' },
+      { name: '商超购物', icon: '🛒', bg: '#FEF3C7', color: '#F59E0B' },
+      { name: '休闲娱乐', icon: '🎮', bg: '#EDE9FE', color: '#8B5CF6' },
+      { name: '日常居家', icon: '🏠', bg: '#DCFCE7', color: '#10B981' },
+      { name: '服饰美容', icon: '👗', bg: '#FCE7F3', color: '#EC4899' },
+      { name: '医疗健康', icon: '💊', bg: '#CCFBF1', color: '#14B8A6' },
+      { name: '数码电器', icon: '💻', bg: '#E0F2FE', color: '#0EA5E9' },
+      { name: '通讯网络', icon: '📱', bg: '#F3E8FF', color: '#A855F7' },
+      { name: '学习培训', icon: '📚', bg: '#FFEDD5', color: '#F97316' },
+      { name: '人情社交', icon: '🎁', bg: '#FFE4E6', color: '#F43F5E' },
+      { name: '其他支出', icon: '📦', bg: '#F1F5F9', color: '#64748B' }
+    ];
+
+    const INCOME_CATEGORIES = [
+      { name: '工资薪水', icon: '💼', bg: '#DCFCE7', color: '#10B981' },
+      { name: '年终奖金', icon: '🏆', bg: '#FEF3C7', color: '#F59E0B' },
+      { name: '兼职副业', icon: '💻', bg: '#E0E7FF', color: '#6366F1' },
+      { name: '理财收益', icon: '📈', bg: '#CCFBF1', color: '#14B8A6' },
+      { name: '红包转账', icon: '🧧', bg: '#FEE2E2', color: '#EF4444' },
+      { name: '退款报销', icon: '🧾', bg: '#E0F2FE', color: '#0EA5E9' },
+      { name: '其他收入', icon: '💰', bg: '#F1F5F9', color: '#64748B' }
+    ];
+
+    const INITIAL_ACCOUNTS = [
+      { id: 'wechat', name: '微信零钱', type: 'asset', balance: 1850.50, icon: '💬', bgColor: '#DCFCE7', remark: '日常零钱' },
+      { id: 'alipay', name: '支付宝', type: 'asset', balance: 5200.00, icon: '🔷', bgColor: '#E0F2FE', remark: '余额宝/网购' },
+      { id: 'cmb', name: '招商银行储蓄卡', type: 'asset', balance: 28400.00, icon: '🏦', bgColor: '#FEE2E2', remark: '工资卡' },
+      { id: 'credit', name: '信用卡', type: 'liability', balance: -1680.00, icon: '💳', bgColor: '#FEF3C7', remark: '账单日20号' },
+      { id: 'cash', name: '现金钱包', type: 'asset', balance: 350.00, icon: '💵', bgColor: '#F1F5F9', remark: '备用现金' }
+    ];
+
+    const SAMPLE_TRANSACTIONS = [
+      { id: 't1', type: 'expense', amount: 38.00, category: '餐饮美食', accountId: 'wechat', date: '2026-10-27', remark: '午餐牛肉面' },
+      { id: 't2', type: 'expense', amount: 15.00, category: '交通出行', accountId: 'alipay', date: '2026-10-27', remark: '地铁出行' },
+      { id: 't3', type: 'expense', amount: 129.00, category: '商超购物', accountId: 'wechat', date: '2026-10-26', remark: '周末超市采购' },
+      { id: 't4', type: 'income', amount: 15000.00, category: '工资薪水', accountId: 'cmb', date: '2026-10-25', remark: '10月工资' },
+      { id: 't5', type: 'expense', amount: 45.00, category: '休闲娱乐', accountId: 'alipay', date: '2026-10-25', remark: '咖啡电影票' },
+      { id: 't6', type: 'expense', amount: 2800.00, category: '日常居家', accountId: 'cmb', date: '2026-10-20', remark: '本月房租物业' },
+      { id: 't7', type: 'expense', amount: 260.00, category: '餐饮美食', accountId: 'credit', date: '2026-10-18', remark: '朋友聚餐' }
+    ];
+
+    createApp({
+      setup() {
+        const activeTab = ref('records');
+        const statTab = ref('expense');
+        const filterType = ref('all');
+        const searchQuery = ref('');
+        const toast = ref('');
+
+        const currentDate = new Date();
+        const currentYear = ref(currentDate.getFullYear());
+        const currentMonth = ref(currentDate.getMonth() + 1);
+
+        // State loaded from LocalStorage
+        const transactions = ref([]);
+        const accounts = ref([]);
+        const budgetData = ref({
+          monthlyLimit: 5000,
+          categoryLimits: {
+            '餐饮美食': 2000,
+            '商超购物': 1000,
+            '休闲娱乐': 600,
+            '交通出行': 500
+          }
+        });
+
+        // Modals & form state
+        const showRecordModal = ref(false);
+        const selectedItem = ref(null);
+        const showAddAccountModal = ref(false);
+        const fileInput = ref(null);
+
+        const currentForm = ref({
+          id: '',
+          type: 'expense',
+          amount: 0,
+          category: '餐饮美食',
+          accountId: 'wechat',
+          targetAccountId: 'cmb',
+          date: new Date().toISOString().split('T')[0],
+          remark: ''
+        });
+
+        const keyExpr = ref('');
+
+        const newAcc = ref({
+          name: '',
+          type: 'asset',
+          balance: 0
+        });
+
+        const showToast = (msg) => {
+          toast.value = msg;
+          setTimeout(() => { toast.value = ''; }, 2200);
+        };
+
+        // LocalStorage save & load
+        const saveData = () => {
+          try {
+            localStorage.setItem('ledger_transactions', JSON.stringify(transactions.value));
+            localStorage.setItem('ledger_accounts', JSON.stringify(accounts.value));
+            localStorage.setItem('ledger_budget', JSON.stringify(budgetData.value));
+          } catch (e) {
+            console.error('Storage error', e);
+          }
+        };
+
+        const loadData = () => {
+          try {
+            const savedT = localStorage.getItem('ledger_transactions');
+            const savedA = localStorage.getItem('ledger_accounts');
+            const savedB = localStorage.getItem('ledger_budget');
+
+            transactions.value = savedT ? JSON.parse(savedT) : SAMPLE_TRANSACTIONS;
+            accounts.value = savedA ? JSON.parse(savedA) : INITIAL_ACCOUNTS;
+            if (savedB) budgetData.value = JSON.parse(savedB);
+          } catch (e) {
+            transactions.value = SAMPLE_TRANSACTIONS;
+            accounts.value = INITIAL_ACCOUNTS;
+          }
+        };
+
+        onMounted(() => {
+          loadData();
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js').catch(() => {});
+          }
+        });
+
+        // Formatting utilities
+        const formatNumber = (num) => {
+          if (isNaN(num) || num === null || num === undefined) return '0.00';
+          return Number(num).toLocaleString('zh-CN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        };
+
+        const getAccountName = (accId) => {
+          const acc = accounts.value.find(a => a.id === accId);
+          return acc ? acc.name : '现金钱包';
+        };
+
+        const availableCategories = computed(() => {
+          return currentForm.value.type === 'expense' ? EXPENSE_CATEGORIES : INCOME_CATEGORIES;
+        });
+
+        const currentCategoryIcon = computed(() => {
+          if (currentForm.value.type === 'transfer') return '🔁';
+          const match = availableCategories.value.find(c => c.name === currentForm.value.category);
+          return match ? match.icon : '🏷️';
+        });
+
+        const currentCategoryBg = computed(() => {
+          if (currentForm.value.type === 'transfer') return '#EEF2FF';
+          const match = availableCategories.value.find(c => c.name === currentForm.value.category);
+          return match ? match.bg : '#F1F5F9';
+        });
+
+        const getCategoryIcon = (item) => {
+          if (item.type === 'transfer') return '🔁';
+          const list = item.type === 'expense' ? EXPENSE_CATEGORIES : INCOME_CATEGORIES;
+          const match = list.find(c => c.name === item.category);
+          return match ? match.icon : '🏷️';
+        };
+
+        const getCategoryBg = (item) => {
+          if (item.type === 'transfer') return '#EEF2FF';
+          const list = item.type === 'expense' ? EXPENSE_CATEGORIES : INCOME_CATEGORIES;
+          const match = list.find(c => c.name === item.category);
+          return match ? match.bg : '#F1F5F9';
+        };
+
+        const getCategoryName = (item) => item.category;
+
+        // Current Month transactions filter
+        const currentMonthTransactions = computed(() => {
+          const mStr = String(currentMonth.value).padStart(2, '0');
+          const prefix = `${currentYear.value}-${mStr}`;
+          return transactions.value.filter(t => t.date.startsWith(prefix));
+        });
+
+        // Monthly stats calculation
+        const monthStats = computed(() => {
+          let expense = 0;
+          let income = 0;
+          currentMonthTransactions.value.forEach(t => {
+            if (t.type === 'expense') expense += Number(t.amount);
+            if (t.type === 'income') income += Number(t.amount);
+          });
+          return {
+            expense,
+            income,
+            balance: income - expense
+          };
+        });
+
+        // Grouped for main list
+        const filteredGroupedTransactions = computed(() => {
+          let list = currentMonthTransactions.value;
+          if (filterType.value !== 'all') {
+            list = list.filter(t => t.type === filterType.value);
+          }
+          if (searchQuery.value) {
+            const q = searchQuery.value.toLowerCase();
+            list = list.filter(t => (t.remark && t.remark.toLowerCase().includes(q)) || t.category.includes(q));
+          }
+
+          // Sort by date descending
+          list = [...list].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          // Group by date
+          const groups = [];
+          const map = {};
+          const weekdays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+
+          list.forEach(item => {
+            if (!map[item.date]) {
+              const d = new Date(item.date);
+              const g = {
+                date: item.date,
+                dateStr: `${d.getMonth() + 1}月${d.getDate()}日`,
+                weekday: weekdays[d.getDay()],
+                totalExpense: 0,
+                totalIncome: 0,
+                items: []
+              };
+              map[item.date] = g;
+              groups.push(g);
+            }
+            map[item.date].items.push(item);
+            if (item.type === 'expense') map[item.date].totalExpense += Number(item.amount);
+            if (item.type === 'income') map[item.date].totalIncome += Number(item.amount);
+          });
+
+          return groups;
+        });
+
+        // Keypad operations
+        const pressKey = (key) => {
+          if (key === 'clear') {
+            keyExpr.value = '';
+          } else if (key === 'backspace') {
+            keyExpr.value = keyExpr.value.slice(0, -1);
+          } else if (key === '+') {
+            if (keyExpr.value && !keyExpr.value.endsWith('+')) {
+              evaluateKeyExpr();
+              keyExpr.value += '+';
+            }
+          } else if (key === '.') {
+            const parts = keyExpr.value.split('+');
+            const lastPart = parts[parts.length - 1];
+            if (!lastPart.includes('.')) {
+              keyExpr.value = (keyExpr.value || '0') + '.';
+            }
+          } else {
+            // Numbers
+            keyExpr.value += key;
+          }
+        };
+
+        const evaluateKeyExpr = () => {
+          if (!keyExpr.value) return 0;
+          try {
+            const parts = keyExpr.value.split('+');
+            let sum = 0;
+            for (let p of parts) {
+              if (p) sum += parseFloat(p) || 0;
+            }
+            keyExpr.value = sum ? String(Number(sum.toFixed(2))) : '';
+            return sum;
+          } catch (e) {
+            return 0;
+          }
+        };
+
+        const openAddModal = () => {
+          keyExpr.value = '';
+          currentForm.value = {
+            id: 't_' + Date.now(),
+            type: 'expense',
+            amount: 0,
+            category: EXPENSE_CATEGORIES[0].name,
+            accountId: accounts.value[0]?.id || 'wechat',
+            targetAccountId: accounts.value[1]?.id || 'cmb',
+            date: new Date().toISOString().split('T')[0],
+            remark: ''
+          };
+          showRecordModal.value = true;
+        };
+
+        const switchFormType = (type) => {
+          currentForm.value.type = type;
+          if (type === 'expense') currentForm.value.category = EXPENSE_CATEGORIES[0].name;
+          if (type === 'income') currentForm.value.category = INCOME_CATEGORIES[0].name;
+          if (type === 'transfer') currentForm.value.category = '内部转账';
+        };
+
+        const selectCategory = (cat) => {
+          currentForm.value.category = cat.name;
+        };
+
+        const cycleAccount = () => {
+          const idx = accounts.value.findIndex(a => a.id === currentForm.value.accountId);
+          const nextIdx = (idx + 1) % accounts.value.length;
+          currentForm.value.accountId = accounts.value[nextIdx].id;
+        };
+
+        const submitRecord = () => {
+          const finalAmount = evaluateKeyExpr();
+          if (!finalAmount || finalAmount <= 0) {
+            showToast('请输入有效的金额！');
+            return;
+          }
+
+          const record = {
+            ...currentForm.value,
+            amount: Number(finalAmount.toFixed(2))
+          };
+
+          // Update balances
+          const srcAcc = accounts.value.find(a => a.id === record.accountId);
+          if (record.type === 'expense' && srcAcc) {
+            srcAcc.balance -= record.amount;
+          } else if (record.type === 'income' && srcAcc) {
+            srcAcc.balance += record.amount;
+          } else if (record.type === 'transfer') {
+            const dstAcc = accounts.value.find(a => a.id === record.targetAccountId);
+            if (srcAcc) srcAcc.balance -= record.amount;
+            if (dstAcc) dstAcc.balance += record.amount;
+          }
+
+          transactions.value.unshift(record);
+          saveData();
+          showRecordModal.value = false;
+          showToast('记账成功！');
+        };
+
+        const openItemDetail = (item) => {
+          selectedItem.value = item;
+        };
+
+        const deleteItem = (item) => {
+          if (!confirm('确定删除该笔记录吗？')) return;
+          // Rollback balance
+          const srcAcc = accounts.value.find(a => a.id === item.accountId);
+          if (item.type === 'expense' && srcAcc) {
+            srcAcc.balance += item.amount;
+          } else if (item.type === 'income' && srcAcc) {
+            srcAcc.balance -= item.amount;
+          } else if (item.type === 'transfer') {
+            const dstAcc = accounts.value.find(a => a.id === item.targetAccountId);
+            if (srcAcc) srcAcc.balance += item.amount;
+            if (dstAcc) dstAcc.balance -= item.amount;
+          }
+
+          transactions.value = transactions.value.filter(t => t.id !== item.id);
+          saveData();
+          selectedItem.value = null;
+          showToast('已删除记录');
+        };
+
+        // Statistics computations
+        const statTotalAmount = computed(() => {
+          let sum = 0;
+          currentMonthTransactions.value.forEach(t => {
+            if (t.type === statTab.value) sum += Number(t.amount);
+          });
+          return sum;
+        });
+
+        const statBreakdown = computed(() => {
+          const map = {};
+          currentMonthTransactions.value.forEach(t => {
+            if (t.type === statTab.value) {
+              map[t.category] = (map[t.category] || 0) + Number(t.amount);
+            }
+          });
+
+          const total = statTotalAmount.value || 1;
+          const list = Object.keys(map).map(catName => {
+            const amt = map[catName];
+            const catObj = (statTab.value === 'expense' ? EXPENSE_CATEGORIES : INCOME_CATEGORIES).find(c => c.name === catName);
+            return {
+              category: catName,
+              amount: amt,
+              color: catObj ? catObj.color : '#6366F1',
+              percentage: ((amt / total) * 100).toFixed(1)
+            };
+          });
+
+          return list.sort((a, b) => b.amount - a.amount);
+        });
+
+        const statDonutSlices = computed(() => {
+          let cumulative = 0;
+          const totalLength = 100 * 2.387; // 2 * PI * 38
+          return statBreakdown.value.map(item => {
+            const pct = parseFloat(item.percentage) / 100;
+            const strokeLength = pct * totalLength;
+            const offset = -cumulative;
+            cumulative += strokeLength;
+            return {
+              category: item.category,
+              color: item.color,
+              strokeLength,
+              offset
+            };
+          });
+        });
+
+        const statDailyAverage = computed(() => {
+          const daysInMonth = new Date(currentYear.value, currentMonth.value, 0).getDate();
+          return statTotalAmount.value / daysInMonth;
+        });
+
+        const statMaxSingle = computed(() => {
+          let max = 0;
+          currentMonthTransactions.value.forEach(t => {
+            if (t.type === statTab.value && t.amount > max) max = t.amount;
+          });
+          return max;
+        });
+
+        const statDailyBars = computed(() => {
+          const daysInMonth = new Date(currentYear.value, currentMonth.value, 0).getDate();
+          const dayMap = {};
+          currentMonthTransactions.value.forEach(t => {
+            if (t.type === statTab.value) {
+              const day = parseInt(t.date.split('-')[2], 10);
+              dayMap[day] = (dayMap[day] || 0) + t.amount;
+            }
+          });
+
+          let maxDayAmt = 0;
+          for (let d = 1; d <= daysInMonth; d++) {
+            if ((dayMap[d] || 0) > maxDayAmt) maxDayAmt = dayMap[d];
+          }
+
+          const bars = [];
+          for (let d = 1; d <= daysInMonth; d++) {
+            const amt = dayMap[d] || 0;
+            bars.push({
+              day: d,
+              amount: amt,
+              heightPercent: maxDayAmt > 0 ? Math.max(8, (amt / maxDayAmt) * 100) : 6
+            });
+          }
+          return bars;
+        });
+
+        // Budget computations
+        const budgetPercent = computed(() => {
+          const limit = budgetData.value.monthlyLimit || 1;
+          return Math.round((monthStats.value.expense / limit) * 100);
+        });
+
+        const remainingBudget = computed(() => {
+          return (budgetData.value.monthlyLimit || 0) - monthStats.value.expense;
+        });
+
+        const remainingDaysInMonth = computed(() => {
+          const now = new Date();
+          const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+          return Math.max(1, lastDay - now.getDate());
+        });
+
+        const dailyBudgetAllowance = computed(() => {
+          const rem = remainingBudget.value;
+          if (rem <= 0) return 0;
+          return rem / remainingDaysInMonth.value;
+        });
+
+        const categoryBudgetList = computed(() => {
+          const limits = budgetData.value.categoryLimits || {};
+          const spentMap = {};
+          currentMonthTransactions.value.forEach(t => {
+            if (t.type === 'expense') {
+              spentMap[t.category] = (spentMap[t.category] || 0) + Number(t.amount);
+            }
+          });
+
+          return Object.keys(limits).map(catName => {
+            const catObj = EXPENSE_CATEGORIES.find(c => c.name === catName);
+            const spent = spentMap[catName] || 0;
+            const limit = limits[catName] || 1;
+            return {
+              name: catName,
+              icon: catObj ? catObj.icon : '🏷️',
+              spent,
+              limit,
+              percent: Math.round((spent / limit) * 100)
+            };
+          });
+        });
+
+        const setBudgetPrompt = () => {
+          const val = prompt('请输入当月总预算额度 (元):', budgetData.value.monthlyLimit);
+          if (val && !isNaN(val)) {
+            budgetData.value.monthlyLimit = parseFloat(val);
+            saveData();
+            showToast('总预算已更新');
+          }
+        };
+
+        const setCatBudgetPrompt = (cat) => {
+          const val = prompt(`请设置 [${cat.name}] 的月度预算 (元):`, cat.limit);
+          if (val && !isNaN(val)) {
+            budgetData.value.categoryLimits[cat.name] = parseFloat(val);
+            saveData();
+            showToast('分类预算已更新');
+          }
+        };
+
+        // Assets computations
+        const totalAssets = computed(() => {
+          return accounts.value
+            .filter(a => a.type === 'asset')
+            .reduce((sum, a) => sum + Number(a.balance), 0);
+        });
+
+        const totalLiabilities = computed(() => {
+          return accounts.value
+            .filter(a => a.type === 'liability')
+            .reduce((sum, a) => sum + Math.abs(Number(a.balance)), 0);
+        });
+
+        const netAssets = computed(() => {
+          return totalAssets.value - totalLiabilities.value;
+        });
+
+        const editAccountPrompt = (acc) => {
+          const val = prompt(`修改 [${acc.name}] 当前余额 (元):`, acc.balance);
+          if (val !== null && !isNaN(val)) {
+            acc.balance = parseFloat(val);
+            saveData();
+            showToast('账户余额已更新');
+          }
+        };
+
+        const saveNewAccount = () => {
+          if (!newAcc.value.name) {
+            showToast('请输入账户名称');
+            return;
+          }
+          accounts.value.push({
+            id: 'acc_' + Date.now(),
+            name: newAcc.value.name,
+            type: newAcc.value.type,
+            balance: parseFloat(newAcc.value.balance) || 0,
+            icon: newAcc.value.type === 'liability' ? '💳' : '🏦',
+            bgColor: newAcc.value.type === 'liability' ? '#FEF3C7' : '#E0E7FF',
+            remark: ''
+          });
+          saveData();
+          showAddAccountModal.value = false;
+          newAcc.value = { name: '', type: 'asset', balance: 0 };
+          showToast('新账户添加成功');
+        };
+
+        // Data Export & Import
+        const exportJSON = () => {
+          const data = {
+            transactions: transactions.value,
+            accounts: accounts.value,
+            budget: budgetData.value,
+            exportAt: new Date().toISOString()
+          };
+          const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `清爽记账_备份_${new Date().toISOString().split('T')[0]}.json`;
+          a.click();
+          URL.revokeObjectURL(url);
+          showToast('数据备份已导出下载');
+        };
+
+        const triggerImportJSON = () => {
+          fileInput.value.click();
+        };
+
+        const handleFileImport = (event) => {
+          const file = event.target.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            try {
+              const data = JSON.parse(e.target.result);
+              if (data.transactions && Array.isArray(data.transactions)) {
+                transactions.value = data.transactions;
+                if (data.accounts) accounts.value = data.accounts;
+                if (data.budget) budgetData.value = data.budget;
+                saveData();
+                showToast('数据恢复成功！');
+              } else {
+                showToast('导入失败：文件格式不正确');
+              }
+            } catch (err) {
+              showToast('导入失败：JSON解析错误');
+            }
+          };
+          reader.readAsText(file);
+        };
+
+        const exportCSV = () => {
+          let csv = '\uFEFF日期,类型,分类,金额,账户,备注\n';
+          transactions.value.forEach(t => {
+            const typeText = t.type === 'expense' ? '支出' : (t.type === 'income' ? '收入' : '转账');
+            const accName = getAccountName(t.accountId);
+            const remark = (t.remark || '').replace(/,/g, '，');
+            csv += `${t.date},${typeText},${t.category},${t.amount},${accName},"${remark}"\n`;
+          });
+          const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `账单流水_${new Date().toISOString().split('T')[0]}.csv`;
+          a.click();
+          URL.revokeObjectURL(url);
+          showToast('Excel CSV 流水已导出');
+        };
+
+        const resetSampleData = () => {
+          if (!confirm('将载入体验演示数据，现有账本将被重置为演示样本，是否继续？')) return;
+          transactions.value = JSON.parse(JSON.stringify(SAMPLE_TRANSACTIONS));
+          accounts.value = JSON.parse(JSON.stringify(INITIAL_ACCOUNTS));
+          saveData();
+          showToast('已载入体验数据');
+        };
+
+        const clearAllDataPrompt = () => {
+          if (!confirm('危险操作：确定要彻底清空本地所有记账数据吗？此操作无法撤销！')) return;
+          transactions.value = [];
+          saveData();
+          showToast('数据已清空');
+        };
+
+        const changeMonthPrompt = () => {
+          const val = prompt('请输入年份与月份 (例如 2026-10):', `${currentYear.value}-${String(currentMonth.value).padStart(2, '0')}`);
+          if (val && val.includes('-')) {
+            const [y, m] = val.split('-');
+            currentYear.value = parseInt(y, 10);
+            currentMonth.value = parseInt(m, 10);
+          }
+        };
+
+        const promptSearch = () => {
+          if (searchQuery.value) {
+            searchQuery.value = '';
+          } else {
+            const q = prompt('请输入要搜索的分类或备注关键字:');
+            if (q) searchQuery.value = q;
+          }
+        };
+
+        return {
+          activeTab,
+          statTab,
+          filterType,
+          searchQuery,
+          toast,
+          currentYear,
+          currentMonth,
+          transactions,
+          accounts,
+          budgetData,
+          showRecordModal,
+          selectedItem,
+          showAddAccountModal,
+          fileInput,
+          currentForm,
+          keyExpr,
+          newAcc,
+          availableCategories,
+          currentCategoryIcon,
+          currentCategoryBg,
+          getCategoryIcon,
+          getCategoryBg,
+          getCategoryName,
+          getAccountName,
+          monthStats,
+          filteredGroupedTransactions,
+          pressKey,
+          openAddModal,
+          switchFormType,
+          selectCategory,
+          cycleAccount,
+          submitRecord,
+          openItemDetail,
+          deleteItem,
+          statTotalAmount,
+          statBreakdown,
+          statDonutSlices,
+          statDailyAverage,
+          statMaxSingle,
+          statDailyBars,
+          budgetPercent,
+          remainingBudget,
+          remainingDaysInMonth,
+          dailyBudgetAllowance,
+          categoryBudgetList,
+          setBudgetPrompt,
+          setCatBudgetPrompt,
+          totalAssets,
+          totalLiabilities,
+          netAssets,
+          editAccountPrompt,
+          saveNewAccount,
+          exportJSON,
+          triggerImportJSON,
+          handleFileImport,
+          exportCSV,
+          resetSampleData,
+          clearAllDataPrompt,
+          changeMonthPrompt,
+          promptSearch,
+          formatNumber
+        };
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
