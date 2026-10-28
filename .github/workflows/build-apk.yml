@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout Source
         uses: actions/checkout@v4
@@ -45,3 +47,14 @@ jobs:
         with:
           name: MyLedger-Debug-APK
           path: android/app/build/outputs/apk/debug/*.apk
+
+      - name: Publish Direct APK to GitHub Releases
+        run: |
+          gh release delete latest --yes || true
+          git tag -d latest || true
+          git push origin :latest || true
+          gh release create latest android/app/build/outputs/apk/debug/app-debug.apk \
+            --title "清爽记账 - 最新安卓安装包" \
+            --notes "每次更新自动生成的最新 APK 安装包，手机端点击直接下载安装，无需解压。"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
