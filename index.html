@@ -113,6 +113,46 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
 
+    .nav-arrow-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: background 0.1s;
+    }
+    .nav-arrow-btn:active {
+      background: #E2E8F0;
+    }
+
+    .month-grid-btn {
+      padding: 14px 6px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1E293B;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .month-grid-btn:active {
+      background: #F1F5F9;
+    }
+    .month-grid-btn.active {
+      background: #10B981;
+      color: #FFFFFF;
+      border-color: #10B981;
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+    }
+
     /* Header Summary Card */
     .summary-card {
       background: linear-gradient(135deg, #059669 0%, #10B981 100%);
@@ -646,11 +686,15 @@
       
       <!-- TAB 1: 明细 (Transactions) -->
       <div v-show="activeTab === 'records'">
-        <!-- Top month bar -->
+        <!-- Top month bar with Previous/Next and Picker -->
         <div class="top-bar">
-          <div class="month-picker-btn" @click="changeMonthPrompt">
-            <span>📅 {{ currentYear }}年{{ currentMonth }}月</span>
-            <span style="font-size: 0.8rem; color: #94A3B8;">▼</span>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <button class="nav-arrow-btn" @click="prevMonth" title="上个月">◀</button>
+            <div class="month-picker-btn" @click="openMonthPicker">
+              <span>📅 {{ currentYear }}年{{ currentMonth }}月</span>
+              <span style="font-size: 0.8rem; color: #94A3B8;">▼</span>
+            </div>
+            <button class="nav-arrow-btn" @click="nextMonth" title="下个月">▶</button>
           </div>
           <div style="font-size: 0.78rem; color: #64748B;">
             累计记账 <b>{{ transactions.length }}</b> 笔
@@ -735,8 +779,13 @@
       <!-- TAB 2: 统计 (Statistics) -->
       <div v-show="activeTab === 'stats'">
         <div class="top-bar">
-          <div class="month-picker-btn" @click="changeMonthPrompt">
-            <span>📊 {{ currentYear }}年{{ currentMonth }}月 统计</span>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <button class="nav-arrow-btn" @click="prevMonth" title="上个月">◀</button>
+            <div class="month-picker-btn" @click="openMonthPicker">
+              <span>📊 {{ currentYear }}年{{ currentMonth }}月</span>
+              <span style="font-size: 0.8rem; color: #94A3B8;">▼</span>
+            </div>
+            <button class="nav-arrow-btn" @click="nextMonth" title="下个月">▶</button>
           </div>
           <div class="type-tab-group" style="scale: 0.9;">
             <div class="type-tab" :class="{ active: statTab === 'expense' }" @click="statTab = 'expense'">支出</div>
@@ -834,8 +883,13 @@
       <!-- TAB 3: 预算 (Budget) -->
       <div v-show="activeTab === 'budget'">
         <div class="top-bar">
-          <div class="month-picker-btn">
-            <span>🎯 {{ currentYear }}年{{ currentMonth }}月 预算中心</span>
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <button class="nav-arrow-btn" @click="prevMonth" title="上个月">◀</button>
+            <div class="month-picker-btn" @click="openMonthPicker">
+              <span>🎯 {{ currentYear }}年{{ currentMonth }}月</span>
+              <span style="font-size: 0.8rem; color: #94A3B8;">▼</span>
+            </div>
+            <button class="nav-arrow-btn" @click="nextMonth" title="下个月">▶</button>
           </div>
           <button class="pill-btn active" @click="setBudgetPrompt">调整总预算</button>
         </div>
@@ -1074,8 +1128,10 @@
           </div>
           <div class="meta-chip">
             <span>📅</span>
-            <input type="date" v-model="currentForm.date" style="border: none; background: transparent; font-size: 0.78rem; outline: none;">
+            <input type="date" v-model="currentForm.date" style="border: none; background: transparent; font-size: 0.82rem; font-weight: 600; color: #0F172A; outline: none; cursor: pointer;">
           </div>
+          <button type="button" class="pill-btn" style="padding: 4px 8px; font-size: 0.72rem; margin-right: 2px;" :class="{ active: isToday(currentForm.date) }" @click="setFormDateOffset(0)">今天</button>
+          <button type="button" class="pill-btn" style="padding: 4px 8px; font-size: 0.72rem; margin-right: 4px;" :class="{ active: isYesterday(currentForm.date) }" @click="setFormDateOffset(-1)">昨天</button>
           <input 
             type="text" 
             class="meta-note-input" 
@@ -1167,6 +1223,41 @@
           </div>
           <button class="btn-block btn-primary" style="margin-top: 10px;" @click="saveNewAccount">保存账户</button>
         </div>
+      </div>
+    </div>
+
+    <!-- MONTH PICKER MODAL -->
+    <div v-if="showMonthPickerModal" class="modal-overlay" @click.self="showMonthPickerModal = false">
+      <div class="sheet-container" style="padding: 22px 20px 28px 20px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 1.1rem; font-weight: 700;">选择账单月份</h3>
+          <button class="close-btn" @click="showMonthPickerModal = false">✕</button>
+        </div>
+
+        <!-- Year Switcher -->
+        <div style="display: flex; justify-content: space-between; align-items: center; background: #F1F5F9; border-radius: 16px; padding: 6px 14px; margin-bottom: 18px;">
+          <button class="nav-arrow-btn" @click="pickerYear--">◀</button>
+          <span style="font-weight: 800; font-size: 1.15rem; color: #0F172A;">{{ pickerYear }} 年</span>
+          <button class="nav-arrow-btn" @click="pickerYear++">▶</button>
+        </div>
+
+        <!-- 12 Months Grid -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+          <button 
+            v-for="m in 12" 
+            :key="m" 
+            class="month-grid-btn"
+            :class="{ active: currentYear === pickerYear && currentMonth === m }"
+            @click="selectMonth(pickerYear, m)"
+          >
+            {{ m }} 月
+          </button>
+        </div>
+
+        <!-- Quick Back to Current Month -->
+        <button class="btn-block btn-secondary" style="margin-top: 16px;" @click="selectMonth(new Date().getFullYear(), new Date().getMonth() + 1)">
+          📅 跳转到当月 ({{ new Date().getFullYear() }}年{{ new Date().getMonth() + 1 }}月)
+        </button>
       </div>
     </div>
 
@@ -1830,13 +1921,53 @@
           showToast('数据已清空');
         };
 
-        const changeMonthPrompt = () => {
-          const val = prompt('请输入年份与月份 (例如 2026-10):', `${currentYear.value}-${String(currentMonth.value).padStart(2, '0')}`);
-          if (val && val.includes('-')) {
-            const [y, m] = val.split('-');
-            currentYear.value = parseInt(y, 10);
-            currentMonth.value = parseInt(m, 10);
+        const showMonthPickerModal = ref(false);
+        const pickerYear = ref(currentYear.value);
+
+        const openMonthPicker = () => {
+          pickerYear.value = currentYear.value;
+          showMonthPickerModal.value = true;
+        };
+
+        const selectMonth = (y, m) => {
+          currentYear.value = y;
+          currentMonth.value = m;
+          showMonthPickerModal.value = false;
+          showToast(`已切换至 ${y}年${m}月`);
+        };
+
+        const prevMonth = () => {
+          if (currentMonth.value === 1) {
+            currentMonth.value = 12;
+            currentYear.value--;
+          } else {
+            currentMonth.value--;
           }
+        };
+
+        const nextMonth = () => {
+          if (currentMonth.value === 12) {
+            currentMonth.value = 1;
+            currentYear.value++;
+          } else {
+            currentMonth.value++;
+          }
+        };
+
+        const setFormDateOffset = (offset) => {
+          const d = new Date();
+          d.setDate(d.getDate() + offset);
+          currentForm.value.date = d.toISOString().split('T')[0];
+        };
+
+        const isToday = (dateStr) => {
+          return dateStr === new Date().toISOString().split('T')[0];
+        };
+
+        const isYesterday = (dateStr) => {
+          const d = new Date();
+          d.setDate(d.getDate() - 1);
+          return dateStr === d.toISOString().split('T')[0];
         };
 
         const promptSearch = () => {
@@ -1908,7 +2039,15 @@
           resetSampleData,
           loadMiaomiaoData,
           clearAllDataPrompt,
-          changeMonthPrompt,
+          showMonthPickerModal,
+          pickerYear,
+          openMonthPicker,
+          selectMonth,
+          prevMonth,
+          nextMonth,
+          setFormDateOffset,
+          isToday,
+          isYesterday,
           promptSearch,
           formatNumber
         };
