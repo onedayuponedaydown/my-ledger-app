@@ -14,8 +14,9 @@
   <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
 
-  <!-- Local Vue 3 -->
+  <!-- Local Vue 3 & Miaomiao Data -->
   <script src="lib/vue.global.js"></script>
+  <script src="lib/miaomiao.data.js"></script>
 
   <style>
     :root {
@@ -945,6 +946,15 @@
           <p style="font-size: 0.78rem; color: #64748B; margin-bottom: 12px;">
             您的所有账本数据仅保存在本设备中，无任何云端上传，安全无广告。建议定期导出备份。
           </p>
+          <div style="margin-bottom: 14px; padding: 14px; background: #ECFDF5; border-radius: 16px; border: 1.5px solid #A7F3D0;">
+            <div style="font-weight: 700; color: #065F46; font-size: 0.92rem; margin-bottom: 4px;">🐾 喵喵记账专属数据通道 (629笔已就绪)</div>
+            <p style="font-size: 0.75rem; color: #047857; margin-bottom: 10px; line-height: 1.4;">已自动为你提取历史记账数据，无需在手机里翻找文件，点下方绿色按钮即可一键导入！</p>
+            <div style="display: flex; gap: 8px;">
+              <button class="btn-block btn-primary" style="margin: 0; font-size: 0.85rem; padding: 10px;" @click="loadMiaomiaoData">🚀 一键载入629笔历史</button>
+              <a href="喵喵记账_全部账单明细.xlsx" download="喵喵记账_全部账单明细.xlsx" class="btn-block btn-secondary" style="margin: 0; font-size: 0.85rem; padding: 10px; text-decoration: none; text-align: center;">📊 下载Excel</a>
+            </div>
+          </div>
+
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
             <button class="btn-block btn-secondary" @click="exportJSON">📥 导出数据备份</button>
             <button class="btn-block btn-secondary" @click="triggerImportJSON">📤 导入恢复数据</button>
@@ -1788,6 +1798,23 @@
           showToast('Excel CSV 流水已导出');
         };
 
+        const loadMiaomiaoData = () => {
+          if (window.MIAOMIAO_DATA && window.MIAOMIAO_DATA.transactions) {
+            transactions.value = window.MIAOMIAO_DATA.transactions;
+            saveData();
+            showToast('🎉 成功载入 629 笔喵喵记账历史！');
+          } else {
+            fetch('喵喵记账_导入清爽记账.json')
+              .then(res => res.json())
+              .then(data => {
+                transactions.value = data.transactions;
+                saveData();
+                showToast('🎉 成功载入 629 笔喵喵记账历史！');
+              })
+              .catch(() => showToast('未能读取到喵喵记账数据'));
+          }
+        };
+
         const resetSampleData = () => {
           if (!confirm('将载入体验演示数据，现有账本将被重置为演示样本，是否继续？')) return;
           transactions.value = JSON.parse(JSON.stringify(SAMPLE_TRANSACTIONS));
@@ -1879,6 +1906,7 @@
           handleFileImport,
           exportCSV,
           resetSampleData,
+          loadMiaomiaoData,
           clearAllDataPrompt,
           changeMonthPrompt,
           promptSearch,

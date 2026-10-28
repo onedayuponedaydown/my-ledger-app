@@ -1,0 +1,5699 @@
+{
+  "transactions": [
+    {
+      "id": "t_1793160371000_1",
+      "type": "expense",
+      "amount": 21.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-28",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1793099048000_2",
+      "type": "expense",
+      "amount": 92.0,
+      "category": "服饰",
+      "accountId": "wechat",
+      "date": "2026-10-27",
+      "remark": "长袖"
+    },
+    {
+      "id": "t_1793096796000_3",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "娱乐",
+      "accountId": "wechat",
+      "date": "2026-10-27",
+      "remark": "apple音乐"
+    },
+    {
+      "id": "t_1793095851791_4",
+      "type": "expense",
+      "amount": 19.92,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-27",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1793067771000_5",
+      "type": "expense",
+      "amount": 5.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-27",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1793008812000_6",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-26",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792985835000_7",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-26",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792918213000_8",
+      "type": "expense",
+      "amount": 173.0,
+      "category": "娱乐",
+      "accountId": "wechat",
+      "date": "2026-10-25",
+      "remark": "网费，凡儿电竞"
+    },
+    {
+      "id": "t_1792906466000_9",
+      "type": "expense",
+      "amount": 22.19,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792899429000_10",
+      "type": "expense",
+      "amount": 15.38,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-25",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792844100000_11",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-24",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792816322000_12",
+      "type": "expense",
+      "amount": 21.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-24",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792758089000_13",
+      "type": "expense",
+      "amount": 19.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-23",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792722160000_14",
+      "type": "expense",
+      "amount": 24.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-23",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792664620000_15",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-22",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792636506000_16",
+      "type": "expense",
+      "amount": 24.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-22",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792634646000_17",
+      "type": "expense",
+      "amount": 21.15,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-10-22",
+      "remark": "洗面奶"
+    },
+    {
+      "id": "t_1792489928000_18",
+      "type": "expense",
+      "amount": 23.37,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-20",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792462779000_19",
+      "type": "expense",
+      "amount": 15.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-20",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792408087000_20",
+      "type": "expense",
+      "amount": 8.76,
+      "category": "办公",
+      "accountId": "wechat",
+      "date": "2026-10-19",
+      "remark": "gemini18个月"
+    },
+    {
+      "id": "t_1792404106000_21",
+      "type": "expense",
+      "amount": 17.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-19",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792383833000_22",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-10-19",
+      "remark": "187话费。"
+    },
+    {
+      "id": "t_1792375661000_23",
+      "type": "expense",
+      "amount": 21.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-19",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792316743000_24",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-18",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792301416000_25",
+      "type": "expense",
+      "amount": 25.2,
+      "category": "服饰",
+      "accountId": "wechat",
+      "date": "2026-10-18",
+      "remark": "短袖"
+    },
+    {
+      "id": "t_1792299657000_26",
+      "type": "expense",
+      "amount": 15.12,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-18",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792228537000_27",
+      "type": "expense",
+      "amount": 19.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-17",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792214249000_28",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792167164000_29",
+      "type": "expense",
+      "amount": 5.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-17",
+      "remark": "夜宵"
+    },
+    {
+      "id": "t_1792157344000_30",
+      "type": "expense",
+      "amount": 44.9,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-10-16",
+      "remark": "网费"
+    },
+    {
+      "id": "t_1792146329000_31",
+      "type": "expense",
+      "amount": 13.9,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-10-16",
+      "remark": "洗衣液"
+    },
+    {
+      "id": "t_1792144166000_32",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-16",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792115180000_33",
+      "type": "expense",
+      "amount": 21.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1792058704000_34",
+      "type": "expense",
+      "amount": 18.74,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-15",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1792035954000_35",
+      "type": "expense",
+      "amount": 18.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-15",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791984431000_36",
+      "type": "expense",
+      "amount": 96.0,
+      "category": "运动",
+      "accountId": "wechat",
+      "date": "2026-10-14",
+      "remark": "健身月卡一个月。"
+    },
+    {
+      "id": "t_1791939996000_37",
+      "type": "expense",
+      "amount": 20.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-14",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791896141000_38",
+      "type": "income",
+      "amount": 700.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-10-13",
+      "remark": "京东E卡"
+    },
+    {
+      "id": "t_1791885973000_39",
+      "type": "expense",
+      "amount": 19.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-13",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1791857736000_40",
+      "type": "expense",
+      "amount": 17.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-13",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791775893000_41",
+      "type": "expense",
+      "amount": 16.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-12",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791727218000_42",
+      "type": "expense",
+      "amount": 5.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-10-11",
+      "remark": "饮料"
+    },
+    {
+      "id": "t_1791714666000_43",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-11",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1791697525000_44",
+      "type": "expense",
+      "amount": 21.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-11",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791696910000_45",
+      "type": "expense",
+      "amount": 78.8,
+      "category": "服饰",
+      "accountId": "wechat",
+      "date": "2026-10-11",
+      "remark": "裤子加毛衣。"
+    },
+    {
+      "id": "t_1791626681000_46",
+      "type": "expense",
+      "amount": 25.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-10",
+      "remark": "一月会员乡村基，晚饭"
+    },
+    {
+      "id": "t_1791598643000_47",
+      "type": "expense",
+      "amount": 21.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-10",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791541695000_48",
+      "type": "expense",
+      "amount": 26.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-09",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1791509441000_49",
+      "type": "expense",
+      "amount": 22.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-09",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791464626000_50",
+      "type": "expense",
+      "amount": 14.5,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-10-08",
+      "remark": "一个月骑行卡美团。"
+    },
+    {
+      "id": "t_1791453353000_51",
+      "type": "expense",
+      "amount": 28.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-08",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1791431831000_52",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-10-08",
+      "remark": "给谢宏远"
+    },
+    {
+      "id": "t_1791421399000_53",
+      "type": "expense",
+      "amount": 9.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-08",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1791376822000_54",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-10-07",
+      "remark": "饮料"
+    },
+    {
+      "id": "t_1791368423000_55",
+      "type": "expense",
+      "amount": 7.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-07",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1791342214000_56",
+      "type": "expense",
+      "amount": 16.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-07",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1791280947000_57",
+      "type": "expense",
+      "amount": 23.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-06",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1791243956000_58",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-06",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1791195813000_59",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-10-05",
+      "remark": "快递"
+    },
+    {
+      "id": "t_1791072130000_60",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-04",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1791032911000_61",
+      "type": "expense",
+      "amount": 42.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-03",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790944693000_62",
+      "type": "expense",
+      "amount": 83.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-10-02",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790919974000_63",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-10-02",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1790832699000_64",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-10-01",
+      "remark": "打车"
+    },
+    {
+      "id": "t_1790818866000_65",
+      "type": "expense",
+      "amount": 1.7,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-10-01",
+      "remark": "公交"
+    },
+    {
+      "id": "t_1790816698905_66",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-10-01",
+      "remark": "music"
+    },
+    {
+      "id": "t_1790770581000_67",
+      "type": "expense",
+      "amount": 17.82,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-30",
+      "remark": "电脑包"
+    },
+    {
+      "id": "t_1790764015000_68",
+      "type": "income",
+      "amount": 3500.0,
+      "category": "工资",
+      "accountId": "wechat",
+      "date": "2026-09-30",
+      "remark": "工资"
+    },
+    {
+      "id": "t_1790763984000_69",
+      "type": "expense",
+      "amount": 800.0,
+      "category": "住房",
+      "accountId": "wechat",
+      "date": "2026-09-30",
+      "remark": "房租"
+    },
+    {
+      "id": "t_1790762098000_70",
+      "type": "expense",
+      "amount": 28.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-30",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790746381000_71",
+      "type": "expense",
+      "amount": 33.83,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-09-30",
+      "remark": "打车"
+    },
+    {
+      "id": "t_1790720632000_72",
+      "type": "expense",
+      "amount": 327.5,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-09-30",
+      "remark": "高铁加火车"
+    },
+    {
+      "id": "t_1790716880000_73",
+      "type": "expense",
+      "amount": 40.33,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-09-30",
+      "remark": "打车去车站"
+    },
+    {
+      "id": "t_1790675775000_74",
+      "type": "expense",
+      "amount": 20.25,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-29",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790650856000_75",
+      "type": "expense",
+      "amount": 21.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-29",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1790590952000_76",
+      "type": "expense",
+      "amount": 26.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-28",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790581040000_77",
+      "type": "expense",
+      "amount": 9.92,
+      "category": "办公",
+      "accountId": "wechat",
+      "date": "2026-09-28",
+      "remark": "deepseek"
+    },
+    {
+      "id": "t_1790573411000_78",
+      "type": "expense",
+      "amount": 138.0,
+      "category": "办公",
+      "accountId": "wechat",
+      "date": "2026-09-28",
+      "remark": "chatgpt"
+    },
+    {
+      "id": "t_1790560051000_79",
+      "type": "expense",
+      "amount": 21.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-28",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1790505408000_80",
+      "type": "expense",
+      "amount": 19.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-27",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790483663000_81",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-09-27",
+      "remark": "187话费。"
+    },
+    {
+      "id": "t_1790480579000_82",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-27",
+      "remark": "电瓶车充电"
+    },
+    {
+      "id": "t_1790480562000_83",
+      "type": "expense",
+      "amount": 25.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-27",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1790410132000_84",
+      "type": "expense",
+      "amount": 39.1,
+      "category": "美容",
+      "accountId": "wechat",
+      "date": "2026-09-26",
+      "remark": "洗牙"
+    },
+    {
+      "id": "t_1790408321000_85",
+      "type": "expense",
+      "amount": 14.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-26",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1790408300000_86",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-26",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1790332366000_87",
+      "type": "expense",
+      "amount": 127.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-25",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790331318000_88",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-25",
+      "remark": "蓝月亮"
+    },
+    {
+      "id": "t_1790331309000_89",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-25",
+      "remark": "修车"
+    },
+    {
+      "id": "t_1790331298000_90",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-25",
+      "remark": "烫头"
+    },
+    {
+      "id": "t_1790310385000_91",
+      "type": "expense",
+      "amount": 20.88,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1790254384000_92",
+      "type": "income",
+      "amount": 1000.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-09-24",
+      "remark": "京东E卡"
+    },
+    {
+      "id": "t_1790244874000_93",
+      "type": "expense",
+      "amount": 32.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-24",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790180647000_94",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-09-24",
+      "remark": "游戏"
+    },
+    {
+      "id": "t_1790160917000_95",
+      "type": "expense",
+      "amount": 17.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-23",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790132401000_96",
+      "type": "expense",
+      "amount": 24.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-23",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1790074155000_97",
+      "type": "expense",
+      "amount": 34.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-22",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1790043345000_98",
+      "type": "expense",
+      "amount": 28.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-22",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789983966000_99",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-21",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789958594000_100",
+      "type": "expense",
+      "amount": 19.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-21",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789898558000_101",
+      "type": "expense",
+      "amount": 24.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-20",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789887397000_102",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-20",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789815140000_103",
+      "type": "expense",
+      "amount": 18.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-19",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789814450000_104",
+      "type": "expense",
+      "amount": 21.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-19",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789727387000_105",
+      "type": "expense",
+      "amount": 32.56,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-18",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789621786000_106",
+      "type": "expense",
+      "amount": 12.72,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789609146000_107",
+      "type": "expense",
+      "amount": 6.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-17",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1789553827000_108",
+      "type": "expense",
+      "amount": 18.32,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-16",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789530469000_109",
+      "type": "expense",
+      "amount": 23.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789525941000_110",
+      "type": "expense",
+      "amount": 29.9,
+      "category": "运动",
+      "accountId": "wechat",
+      "date": "2026-09-16",
+      "remark": "肌酸"
+    },
+    {
+      "id": "t_1789468652000_111",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-15",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789443324000_112",
+      "type": "expense",
+      "amount": 15.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-15",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789436322000_113",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-15",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1789433649000_114",
+      "type": "expense",
+      "amount": 69.0,
+      "category": "服饰",
+      "accountId": "wechat",
+      "date": "2026-09-15",
+      "remark": "德训鞋"
+    },
+    {
+      "id": "t_1789382437000_115",
+      "type": "expense",
+      "amount": 19.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-14",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789350393000_116",
+      "type": "expense",
+      "amount": 21.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-14",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789293363000_117",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-13",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789289652000_118",
+      "type": "expense",
+      "amount": 6.81,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-13",
+      "remark": "饮料"
+    },
+    {
+      "id": "t_1789286529000_119",
+      "type": "expense",
+      "amount": 144.6,
+      "category": "运动",
+      "accountId": "wechat",
+      "date": "2026-09-13",
+      "remark": "健身月卡一个月。"
+    },
+    {
+      "id": "t_1789278904000_120",
+      "type": "expense",
+      "amount": 21.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-09-13",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1789272993000_121",
+      "type": "expense",
+      "amount": 22.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-13",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789216552000_122",
+      "type": "expense",
+      "amount": 136.0,
+      "category": "运动",
+      "accountId": "wechat",
+      "date": "2026-09-12",
+      "remark": "蛋白粉"
+    },
+    {
+      "id": "t_1789210477000_123",
+      "type": "expense",
+      "amount": 16.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-12",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789209700000_124",
+      "type": "expense",
+      "amount": 19.72,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-12",
+      "remark": "头盔加电池。"
+    },
+    {
+      "id": "t_1789123314000_125",
+      "type": "expense",
+      "amount": 12.9,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-09-11",
+      "remark": "下雨打车。"
+    },
+    {
+      "id": "t_1789119773000_126",
+      "type": "expense",
+      "amount": 27.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-11",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789098075000_127",
+      "type": "expense",
+      "amount": 19.59,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-11",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1789036448000_128",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-10",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1789009586000_129",
+      "type": "expense",
+      "amount": 26.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-10",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788948478000_130",
+      "type": "expense",
+      "amount": 17.11,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-09",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788919722000_131",
+      "type": "expense",
+      "amount": 21.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-09",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788863270000_132",
+      "type": "expense",
+      "amount": 18.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-08",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788863240000_133",
+      "type": "expense",
+      "amount": 36.96,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-08",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788833767000_134",
+      "type": "expense",
+      "amount": 231.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-08",
+      "remark": "水电"
+    },
+    {
+      "id": "t_1788833742000_135",
+      "type": "expense",
+      "amount": 18.8,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-09-08",
+      "remark": "一个月单车。"
+    },
+    {
+      "id": "t_1788777104000_136",
+      "type": "expense",
+      "amount": 18.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-07",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788745434000_137",
+      "type": "expense",
+      "amount": 13.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-07",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788690660000_138",
+      "type": "expense",
+      "amount": 13.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-06",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788668547000_139",
+      "type": "expense",
+      "amount": 17.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-06",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788612733000_140",
+      "type": "expense",
+      "amount": 16.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-05",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788585604000_141",
+      "type": "expense",
+      "amount": 21.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-05",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788515772000_142",
+      "type": "expense",
+      "amount": 19.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-04",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788492690000_143",
+      "type": "expense",
+      "amount": 19.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-04",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788429568000_144",
+      "type": "expense",
+      "amount": 27.78,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-03",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788425998000_145",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "办公",
+      "accountId": "wechat",
+      "date": "2026-09-03",
+      "remark": "deepseek"
+    },
+    {
+      "id": "t_1788404540000_146",
+      "type": "expense",
+      "amount": 22.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-03",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788400331000_147",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-09-03",
+      "remark": "卡二话费"
+    },
+    {
+      "id": "t_1788346158000_148",
+      "type": "expense",
+      "amount": 22.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-02",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788346138000_149",
+      "type": "expense",
+      "amount": 15.6,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-09-02",
+      "remark": "打车，下大雨"
+    },
+    {
+      "id": "t_1788344042000_150",
+      "type": "expense",
+      "amount": 19.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-02",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788259063000_151",
+      "type": "expense",
+      "amount": 32.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-01",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788258357000_152",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-09-01",
+      "remark": "apple music"
+    },
+    {
+      "id": "t_1788258344000_153",
+      "type": "expense",
+      "amount": 11.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-09-01",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788183462000_154",
+      "type": "expense",
+      "amount": 800.0,
+      "category": "住房",
+      "accountId": "wechat",
+      "date": "2026-08-31",
+      "remark": "房租"
+    },
+    {
+      "id": "t_1788171549000_155",
+      "type": "income",
+      "amount": 3500.0,
+      "category": "工资",
+      "accountId": "wechat",
+      "date": "2026-08-31",
+      "remark": "工资"
+    },
+    {
+      "id": "t_1788171116000_156",
+      "type": "expense",
+      "amount": 26.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-31",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788142501000_157",
+      "type": "expense",
+      "amount": 17.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-31",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788088074000_158",
+      "type": "expense",
+      "amount": 18.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-30",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1788068233000_159",
+      "type": "expense",
+      "amount": 19.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-30",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1788004431000_160",
+      "type": "expense",
+      "amount": 20.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-29",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787981415000_161",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-08-29",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1787977705000_162",
+      "type": "expense",
+      "amount": 19.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-29",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787911713000_163",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-28",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787905983000_164",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "办公",
+      "accountId": "wechat",
+      "date": "2026-08-28",
+      "remark": "deepseek"
+    },
+    {
+      "id": "t_1787905966000_165",
+      "type": "expense",
+      "amount": 17.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-28",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787825148000_166",
+      "type": "expense",
+      "amount": 17.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-27",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787803017000_167",
+      "type": "expense",
+      "amount": 25.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-27",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787738420000_168",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-26",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787713989000_169",
+      "type": "expense",
+      "amount": 20.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-26",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787651631000_170",
+      "type": "expense",
+      "amount": 34.32,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-25",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787631732000_171",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787566689000_172",
+      "type": "expense",
+      "amount": 25.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-24",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787543496000_173",
+      "type": "expense",
+      "amount": 14.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-24",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1787484141000_174",
+      "type": "income",
+      "amount": 6000.0,
+      "category": "收款",
+      "accountId": "wechat",
+      "date": "2026-08-23",
+      "remark": "妈，学费"
+    },
+    {
+      "id": "t_1787478477000_175",
+      "type": "expense",
+      "amount": 18.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-23",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787457953000_176",
+      "type": "expense",
+      "amount": 20.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-23",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787394568000_177",
+      "type": "expense",
+      "amount": 20.79,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-22",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787372327000_178",
+      "type": "expense",
+      "amount": 13.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-22",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787333570000_179",
+      "type": "expense",
+      "amount": 30.4,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-22",
+      "remark": "纸"
+    },
+    {
+      "id": "t_1787306485000_180",
+      "type": "expense",
+      "amount": 34.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-21",
+      "remark": "晚饭，乡村基小碗菜会员"
+    },
+    {
+      "id": "t_1787288909000_181",
+      "type": "expense",
+      "amount": 14.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-21",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787236402000_182",
+      "type": "expense",
+      "amount": 46.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-08-20",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1787220772000_183",
+      "type": "expense",
+      "amount": 44.33,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-20",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787203843000_184",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "办公",
+      "accountId": "wechat",
+      "date": "2026-08-20",
+      "remark": "deepseek"
+    },
+    {
+      "id": "t_1787195695000_185",
+      "type": "expense",
+      "amount": 22.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-20",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787133755000_186",
+      "type": "expense",
+      "amount": 27.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-19",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787110504000_187",
+      "type": "expense",
+      "amount": 28.88,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-19",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1787048266000_188",
+      "type": "expense",
+      "amount": 29.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-18",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1787047695000_189",
+      "type": "expense",
+      "amount": 19.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-18",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786961990000_190",
+      "type": "expense",
+      "amount": 13.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-17",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786937820000_191",
+      "type": "expense",
+      "amount": 15.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786890718000_192",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-16",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786865658000_193",
+      "type": "expense",
+      "amount": 13.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786811561000_194",
+      "type": "expense",
+      "amount": 26.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786811550000_195",
+      "type": "expense",
+      "amount": 17.8,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-16",
+      "remark": "眼睛框"
+    },
+    {
+      "id": "t_1786715490000_196",
+      "type": "income",
+      "amount": 1300.0,
+      "category": "收款",
+      "accountId": "wechat",
+      "date": "2026-08-14",
+      "remark": "爸借"
+    },
+    {
+      "id": "t_1786706990000_197",
+      "type": "expense",
+      "amount": 23.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-14",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786681512000_198",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-08-14",
+      "remark": "187话费。"
+    },
+    {
+      "id": "t_1786678169000_199",
+      "type": "expense",
+      "amount": 24.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-14",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786595955000_200",
+      "type": "expense",
+      "amount": 15.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-13",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786529482000_201",
+      "type": "expense",
+      "amount": 18.21,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-12",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786509550000_202",
+      "type": "expense",
+      "amount": 6.9,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-12",
+      "remark": "雨伞一个月。"
+    },
+    {
+      "id": "t_1786504140000_203",
+      "type": "expense",
+      "amount": 8.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-12",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1786416004000_204",
+      "type": "expense",
+      "amount": 10.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-11",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1786374383000_205",
+      "type": "expense",
+      "amount": 21.61,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-08-10",
+      "remark": "一个月单车。"
+    },
+    {
+      "id": "t_1786356961000_206",
+      "type": "expense",
+      "amount": 26.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-10",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786334272000_207",
+      "type": "expense",
+      "amount": 14.7,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-08-10",
+      "remark": "咖啡"
+    },
+    {
+      "id": "t_1786329988000_208",
+      "type": "expense",
+      "amount": 83.46,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-10",
+      "remark": "vpn"
+    },
+    {
+      "id": "t_1786329362000_209",
+      "type": "expense",
+      "amount": 14.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-10",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1786272684000_210",
+      "type": "expense",
+      "amount": 75.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-09",
+      "remark": "烤鱼，抖音团购券"
+    },
+    {
+      "id": "t_1786272261000_211",
+      "type": "expense",
+      "amount": 23.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-09",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786256869000_212",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-09",
+      "remark": "三包蟑螂药，加一袋洗衣粉。"
+    },
+    {
+      "id": "t_1786254851000_213",
+      "type": "expense",
+      "amount": 17.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-09",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786186731000_214",
+      "type": "expense",
+      "amount": 26.78,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-08",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786164219000_215",
+      "type": "expense",
+      "amount": 13.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-08",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1786164211000_216",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-08-08",
+      "remark": "地铁"
+    },
+    {
+      "id": "t_1786157315000_217",
+      "type": "expense",
+      "amount": 15.3,
+      "category": "医疗",
+      "accountId": "wechat",
+      "date": "2026-08-08",
+      "remark": "挂号费"
+    },
+    {
+      "id": "t_1786075771000_218",
+      "type": "expense",
+      "amount": 1200.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-07",
+      "remark": "爸买车贷"
+    },
+    {
+      "id": "t_1786068970000_219",
+      "type": "expense",
+      "amount": 18.21,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-07",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1786065473000_220",
+      "type": "expense",
+      "amount": 11.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-07",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1786010306000_221",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-06",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785978031000_222",
+      "type": "expense",
+      "amount": 11.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-06",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1785939397000_223",
+      "type": "expense",
+      "amount": 37.76,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-05",
+      "remark": "洗面奶"
+    },
+    {
+      "id": "t_1785924838000_224",
+      "type": "expense",
+      "amount": 11.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-05",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1785924828000_225",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-05",
+      "remark": "餐饮"
+    },
+    {
+      "id": "t_1785847343000_226",
+      "type": "expense",
+      "amount": 275.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-04",
+      "remark": "水电7月"
+    },
+    {
+      "id": "t_1785839704000_227",
+      "type": "expense",
+      "amount": 36.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-04",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785832200000_228",
+      "type": "income",
+      "amount": 1000.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-08-04",
+      "remark": "妈"
+    },
+    {
+      "id": "t_1785812260000_229",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-08-04",
+      "remark": "玻璃杯"
+    },
+    {
+      "id": "t_1785812253000_230",
+      "type": "expense",
+      "amount": 11.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-04",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1785800819000_231",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-08-04",
+      "remark": "话费"
+    },
+    {
+      "id": "t_1785751580000_232",
+      "type": "expense",
+      "amount": 25.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-03",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785720652000_233",
+      "type": "expense",
+      "amount": 10.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-03",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1785672175000_234",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-08-02",
+      "remark": "奶茶"
+    },
+    {
+      "id": "t_1785638927000_235",
+      "type": "expense",
+      "amount": 15.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-02",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1785597240000_236",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-08-01",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1785568302000_237",
+      "type": "expense",
+      "amount": 82.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-01",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785556077000_238",
+      "type": "expense",
+      "amount": 23.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-08-01",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1785494091000_239",
+      "type": "income",
+      "amount": 2434.78,
+      "category": "工资",
+      "accountId": "wechat",
+      "date": "2026-07-31",
+      "remark": "7月工资"
+    },
+    {
+      "id": "t_1785494066000_240",
+      "type": "expense",
+      "amount": 16.89,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-31",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785494052000_241",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-31",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1785469413000_242",
+      "type": "expense",
+      "amount": 16.8,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-31",
+      "remark": "眼睛框"
+    },
+    {
+      "id": "t_1785469402000_243",
+      "type": "expense",
+      "amount": 392.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-31",
+      "remark": "眼睛"
+    },
+    {
+      "id": "t_1785407773000_244",
+      "type": "expense",
+      "amount": 34.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-30",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785371629000_245",
+      "type": "expense",
+      "amount": 13.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-30",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1785324211000_246",
+      "type": "expense",
+      "amount": 22.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-29",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785290965000_247",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-29",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1785234473000_248",
+      "type": "expense",
+      "amount": 16.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-28",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785205771000_249",
+      "type": "expense",
+      "amount": 18.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-28",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1785150148000_250",
+      "type": "expense",
+      "amount": 42.63,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-27",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785128986000_251",
+      "type": "expense",
+      "amount": 0.99,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-27",
+      "remark": "美团单车"
+    },
+    {
+      "id": "t_1785121661000_252",
+      "type": "expense",
+      "amount": 14.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-27",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1785057482000_253",
+      "type": "expense",
+      "amount": 18.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-26",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1785036426000_254",
+      "type": "expense",
+      "amount": 14.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-26",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784980507000_255",
+      "type": "expense",
+      "amount": 18.88,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-25",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784961999000_256",
+      "type": "expense",
+      "amount": 14.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784945579000_257",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784942965000_258",
+      "type": "expense",
+      "amount": 237.26,
+      "category": "医疗",
+      "accountId": "wechat",
+      "date": "2026-07-25",
+      "remark": "挂号加药"
+    },
+    {
+      "id": "t_1784940396000_259",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-25",
+      "remark": "地铁"
+    },
+    {
+      "id": "t_1784888794000_260",
+      "type": "expense",
+      "amount": 14.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-24",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784855141000_261",
+      "type": "expense",
+      "amount": 12.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-24",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784800508000_262",
+      "type": "expense",
+      "amount": 22.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-23",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784784291000_263",
+      "type": "expense",
+      "amount": 69.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-23",
+      "remark": "Cloud中转站10美元"
+    },
+    {
+      "id": "t_1784775424000_264",
+      "type": "expense",
+      "amount": 16.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-23",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1784714790000_265",
+      "type": "expense",
+      "amount": 23.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-22",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784697834000_266",
+      "type": "expense",
+      "amount": 1.39,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-22",
+      "remark": "calude 会员"
+    },
+    {
+      "id": "t_1784682228000_267",
+      "type": "expense",
+      "amount": 9.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-22",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1784640642000_268",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-21",
+      "remark": "泡脚醋"
+    },
+    {
+      "id": "t_1784629961000_269",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-21",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784623816000_270",
+      "type": "expense",
+      "amount": 10.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-21",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1784543671000_271",
+      "type": "expense",
+      "amount": 27.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-20",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784522263000_272",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-20",
+      "remark": "地铁"
+    },
+    {
+      "id": "t_1784448279000_273",
+      "type": "expense",
+      "amount": 42.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-19",
+      "remark": "扩展坞"
+    },
+    {
+      "id": "t_1784445794000_274",
+      "type": "expense",
+      "amount": 14.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-19",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784430008000_275",
+      "type": "expense",
+      "amount": 12.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-19",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784367450000_276",
+      "type": "expense",
+      "amount": 10.06,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-18",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784340477000_277",
+      "type": "expense",
+      "amount": 12.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-18",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784282530000_278",
+      "type": "expense",
+      "amount": 14.37,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-17",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784258047000_279",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784210437000_280",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-16",
+      "remark": "骑车"
+    },
+    {
+      "id": "t_1784196622000_281",
+      "type": "expense",
+      "amount": 23.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-16",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1784171024000_282",
+      "type": "expense",
+      "amount": 15.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784171018000_283",
+      "type": "expense",
+      "amount": 200.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-16",
+      "remark": "理发充卡"
+    },
+    {
+      "id": "t_1784165691000_284",
+      "type": "expense",
+      "amount": 200.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-16",
+      "remark": "羽毛球拍"
+    },
+    {
+      "id": "t_1784107834000_285",
+      "type": "expense",
+      "amount": 9036.0,
+      "category": "借出",
+      "accountId": "wechat",
+      "date": "2026-07-15",
+      "remark": "姐，违约"
+    },
+    {
+      "id": "t_1784083348000_286",
+      "type": "expense",
+      "amount": 10.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-15",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1784039021000_287",
+      "type": "expense",
+      "amount": 2.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "水"
+    },
+    {
+      "id": "t_1784037021000_288",
+      "type": "expense",
+      "amount": 330.0,
+      "category": "医疗",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "体检"
+    },
+    {
+      "id": "t_1784036959000_289",
+      "type": "expense",
+      "amount": 9.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "晚饭加餐"
+    },
+    {
+      "id": "t_1784035984000_290",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "零食"
+    },
+    {
+      "id": "t_1784024029000_291",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1783998704000_292",
+      "type": "expense",
+      "amount": 15.05,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "运费"
+    },
+    {
+      "id": "t_1783994415000_293",
+      "type": "income",
+      "amount": 1000.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "爸红包"
+    },
+    {
+      "id": "t_1783991948000_294",
+      "type": "expense",
+      "amount": 16.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-14",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1783950512000_295",
+      "type": "expense",
+      "amount": 25.8,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-13",
+      "remark": "镜子"
+    },
+    {
+      "id": "t_1783937394000_296",
+      "type": "expense",
+      "amount": 26.23,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-13",
+      "remark": "晚饭，乡村基，卡加饭"
+    },
+    {
+      "id": "t_1783920307000_297",
+      "type": "expense",
+      "amount": 1.8,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-13",
+      "remark": "骑行"
+    },
+    {
+      "id": "t_1783911649000_298",
+      "type": "expense",
+      "amount": 13.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-13",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1783859537000_299",
+      "type": "expense",
+      "amount": 24.39,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-12",
+      "remark": "热水壶"
+    },
+    {
+      "id": "t_1783857503000_300",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-12",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1783839318000_301",
+      "type": "expense",
+      "amount": 15.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-12",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1783818750000_302",
+      "type": "expense",
+      "amount": 12.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-12",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1783769849000_303",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-11",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1783752143000_304",
+      "type": "expense",
+      "amount": 688.72,
+      "category": "购物",
+      "accountId": "wechat",
+      "date": "2026-07-11",
+      "remark": "衣服，键盘"
+    },
+    {
+      "id": "t_1783740666000_305",
+      "type": "expense",
+      "amount": 13.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-11",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1783690089000_306",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-10",
+      "remark": "水"
+    },
+    {
+      "id": "t_1783677651000_307",
+      "type": "expense",
+      "amount": 21.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-10",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1783651700000_308",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-10",
+      "remark": "打印学籍验证报告两份"
+    },
+    {
+      "id": "t_1783648918000_309",
+      "type": "expense",
+      "amount": 66.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-10",
+      "remark": "洗发水，吹风机镜子"
+    },
+    {
+      "id": "t_1783647870000_310",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-10",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1783643830000_311",
+      "type": "expense",
+      "amount": 16.9,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-10",
+      "remark": "骑行卡30天"
+    },
+    {
+      "id": "t_1783597602000_312",
+      "type": "expense",
+      "amount": 1600.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-09",
+      "remark": "房租"
+    },
+    {
+      "id": "t_1783417748000_313",
+      "type": "expense",
+      "amount": 3.5,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-07",
+      "remark": "百度网盘加速"
+    },
+    {
+      "id": "t_1783394869000_314",
+      "type": "expense",
+      "amount": 3.6,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-07",
+      "remark": "单车"
+    },
+    {
+      "id": "t_1783383561000_315",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-07",
+      "remark": "打印简历"
+    },
+    {
+      "id": "t_1783362851000_316",
+      "type": "expense",
+      "amount": 122.0,
+      "category": "住房",
+      "accountId": "wechat",
+      "date": "2026-07-07",
+      "remark": "双人房"
+    },
+    {
+      "id": "t_1783362836000_317",
+      "type": "expense",
+      "amount": 68.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-07",
+      "remark": "出租"
+    },
+    {
+      "id": "t_1783357223000_318",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-07",
+      "remark": "过路费"
+    },
+    {
+      "id": "t_1783342132000_319",
+      "type": "expense",
+      "amount": 600.0,
+      "category": "借出",
+      "accountId": "wechat",
+      "date": "2026-07-06",
+      "remark": "boom"
+    },
+    {
+      "id": "t_1783340560000_320",
+      "type": "income",
+      "amount": 600.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-07-06",
+      "remark": "妈"
+    },
+    {
+      "id": "t_1783313055000_321",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-06",
+      "remark": "出租"
+    },
+    {
+      "id": "t_1783306103000_322",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-07-06",
+      "remark": "寄快递到杭州。"
+    },
+    {
+      "id": "t_1783306095000_323",
+      "type": "expense",
+      "amount": 12.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-06",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1783265019000_324",
+      "type": "expense",
+      "amount": 25.76,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-07-05",
+      "remark": "路上吃。"
+    },
+    {
+      "id": "t_1783255692000_325",
+      "type": "expense",
+      "amount": 13.79,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-05",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1783225615000_326",
+      "type": "expense",
+      "amount": 14.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-05",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1783224707000_327",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-07-05",
+      "remark": "话费"
+    },
+    {
+      "id": "t_1783177957000_328",
+      "type": "income",
+      "amount": 100.0,
+      "category": "工资",
+      "accountId": "wechat",
+      "date": "2026-07-04",
+      "remark": "智趣校园退费。"
+    },
+    {
+      "id": "t_1783177947000_329",
+      "type": "expense",
+      "amount": 47.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-04",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1783131724000_330",
+      "type": "expense",
+      "amount": 17.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-04",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1783076460000_331",
+      "type": "expense",
+      "amount": 8.8,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-07-03",
+      "remark": "奶茶"
+    },
+    {
+      "id": "t_1783076390000_332",
+      "type": "expense",
+      "amount": 13.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-03",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1783068957000_333",
+      "type": "expense",
+      "amount": 1.38,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-03",
+      "remark": "wps会员"
+    },
+    {
+      "id": "t_1783060361000_334",
+      "type": "income",
+      "amount": 40.0,
+      "category": "租金",
+      "accountId": "wechat",
+      "date": "2026-07-03",
+      "remark": "取水的押金"
+    },
+    {
+      "id": "t_1783050868000_335",
+      "type": "expense",
+      "amount": 12.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-03",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782991683000_336",
+      "type": "expense",
+      "amount": 22.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-02",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782965838000_337",
+      "type": "expense",
+      "amount": 13.76,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-02",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782908512000_338",
+      "type": "expense",
+      "amount": 12.48,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-01",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782882532000_339",
+      "type": "expense",
+      "amount": 27.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-07-01",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782874818000_340",
+      "type": "expense",
+      "amount": 687.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-07-01",
+      "remark": "去杭州火车加飞机，7月6号。"
+    },
+    {
+      "id": "t_1782792868000_341",
+      "type": "expense",
+      "amount": 19.68,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-30",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782737839000_342",
+      "type": "expense",
+      "amount": 20.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-29",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782704191000_343",
+      "type": "expense",
+      "amount": 13.99,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-29",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782630234000_344",
+      "type": "expense",
+      "amount": 43.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-28",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782619178000_345",
+      "type": "expense",
+      "amount": 8.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-06-28",
+      "remark": "出租"
+    },
+    {
+      "id": "t_1782563319000_346",
+      "type": "expense",
+      "amount": 15.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-27",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782530900000_347",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-06-27",
+      "remark": "奶茶给胡"
+    },
+    {
+      "id": "t_1782524887000_348",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-27",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1782484890000_349",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-06-26",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1782460668000_350",
+      "type": "expense",
+      "amount": 11.8,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-26",
+      "remark": "牙膏"
+    },
+    {
+      "id": "t_1782460657000_351",
+      "type": "expense",
+      "amount": 48.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-26",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782433362000_352",
+      "type": "expense",
+      "amount": 11.99,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-26",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1782396436000_353",
+      "type": "expense",
+      "amount": 9.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-25",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782384322000_354",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "学习",
+      "accountId": "wechat",
+      "date": "2026-06-25",
+      "remark": "Comfyui"
+    },
+    {
+      "id": "t_1782366029000_355",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-06-25",
+      "remark": "奶茶"
+    },
+    {
+      "id": "t_1782358313000_356",
+      "type": "expense",
+      "amount": 15.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782296845000_357",
+      "type": "expense",
+      "amount": 22.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-24",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782276566000_358",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-24",
+      "remark": "桶装水"
+    },
+    {
+      "id": "t_1782276558000_359",
+      "type": "expense",
+      "amount": 8.85,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-24",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782229726000_360",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-23",
+      "remark": "端脑云"
+    },
+    {
+      "id": "t_1782217211000_361",
+      "type": "expense",
+      "amount": 8.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-06-23",
+      "remark": "奶茶"
+    },
+    {
+      "id": "t_1782216389000_362",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-23",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782180854000_363",
+      "type": "expense",
+      "amount": 16.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-23",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782117086000_364",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-22",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782116328000_365",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-22",
+      "remark": "秀诗造型"
+    },
+    {
+      "id": "t_1782096382000_366",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-22",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1782044024000_367",
+      "type": "expense",
+      "amount": 13.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-21",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1782015600000_368",
+      "type": "expense",
+      "amount": 15.91,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-21",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781938635000_369",
+      "type": "expense",
+      "amount": 200.0,
+      "category": "借出",
+      "accountId": "wechat",
+      "date": "2026-06-20",
+      "remark": "借齐克强。"
+    },
+    {
+      "id": "t_1781929234000_370",
+      "type": "expense",
+      "amount": 25.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-20",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781881728000_371",
+      "type": "expense",
+      "amount": 70.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-19",
+      "remark": "实习证明"
+    },
+    {
+      "id": "t_1781868690000_372",
+      "type": "expense",
+      "amount": 11.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-19",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781858456000_373",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-19",
+      "remark": "寄快递，寄家里"
+    },
+    {
+      "id": "t_1781857966000_374",
+      "type": "expense",
+      "amount": 38.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-19",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781847225000_375",
+      "type": "income",
+      "amount": 199.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-06-19",
+      "remark": "大姑妈"
+    },
+    {
+      "id": "t_1781847207000_376",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-19",
+      "remark": "洗鞋"
+    },
+    {
+      "id": "t_1781769902000_377",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-18",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1781758677000_378",
+      "type": "expense",
+      "amount": 18.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-18",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781702054000_379",
+      "type": "expense",
+      "amount": 5.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-06-17",
+      "remark": "两瓶大山楂汁。"
+    },
+    {
+      "id": "t_1781702026000_380",
+      "type": "expense",
+      "amount": 25.12,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-17",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781701847000_381",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781666295000_382",
+      "type": "expense",
+      "amount": 1.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-06-17",
+      "remark": "雪糕"
+    },
+    {
+      "id": "t_1781662553000_383",
+      "type": "expense",
+      "amount": 13.27,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781608725456_384",
+      "type": "expense",
+      "amount": 13.95,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-16",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781587658000_385",
+      "type": "expense",
+      "amount": 2.81,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-16",
+      "remark": "班费"
+    },
+    {
+      "id": "t_1781585306000_386",
+      "type": "expense",
+      "amount": 25.98,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781531750000_387",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-15",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781502306000_388",
+      "type": "expense",
+      "amount": 2.9,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-15",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1781502301000_389",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-15",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781445353000_390",
+      "type": "expense",
+      "amount": 21.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-14",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781438521000_391",
+      "type": "expense",
+      "amount": 13.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-14",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781398468000_392",
+      "type": "expense",
+      "amount": 6.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-14",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1781349483000_393",
+      "type": "expense",
+      "amount": 36.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-13",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781340061000_394",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-06-13",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1781340045000_395",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-13",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781306523000_396",
+      "type": "expense",
+      "amount": 10.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-13",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1781256389000_397",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-12",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781256382000_398",
+      "type": "expense",
+      "amount": 9.16,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-12",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781236746000_399",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-06-12",
+      "remark": "冰淇淋"
+    },
+    {
+      "id": "t_1781172724000_400",
+      "type": "expense",
+      "amount": 5.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-11",
+      "remark": "笔加雪糕"
+    },
+    {
+      "id": "t_1781171375000_401",
+      "type": "expense",
+      "amount": 1.1,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-11",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1781170715000_402",
+      "type": "expense",
+      "amount": 9.16,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-11",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781145686000_403",
+      "type": "expense",
+      "amount": 23.88,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-11",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781086821000_404",
+      "type": "expense",
+      "amount": 21.82,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-10",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1781086434000_405",
+      "type": "income",
+      "amount": 88.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-06-10",
+      "remark": "生日姐"
+    },
+    {
+      "id": "t_1781086421000_406",
+      "type": "income",
+      "amount": 520.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-06-10",
+      "remark": "生日妈"
+    },
+    {
+      "id": "t_1781061586000_407",
+      "type": "expense",
+      "amount": 500.0,
+      "category": "住房",
+      "accountId": "wechat",
+      "date": "2026-06-10",
+      "remark": "房租"
+    },
+    {
+      "id": "t_1781061568000_408",
+      "type": "income",
+      "amount": 600.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-06-10",
+      "remark": "生日爸"
+    },
+    {
+      "id": "t_1781061547000_409",
+      "type": "expense",
+      "amount": 119.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-10",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1781061534000_410",
+      "type": "expense",
+      "amount": 74.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-10",
+      "remark": "洗面奶发胶香皂"
+    },
+    {
+      "id": "t_1780989110000_411",
+      "type": "expense",
+      "amount": 12.32,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-09",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780989069000_412",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-09",
+      "remark": "桶装水"
+    },
+    {
+      "id": "t_1780913557000_413",
+      "type": "expense",
+      "amount": 5.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-08",
+      "remark": "红稿纸"
+    },
+    {
+      "id": "t_1780913542000_414",
+      "type": "expense",
+      "amount": 15.11,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-08",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1780913526000_415",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-08",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780902922000_416",
+      "type": "income",
+      "amount": 586.0,
+      "category": "其它",
+      "accountId": "wechat",
+      "date": "2026-06-08",
+      "remark": "助学金"
+    },
+    {
+      "id": "t_1780808579000_417",
+      "type": "expense",
+      "amount": 27.98,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-07",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780737303000_418",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-06-06",
+      "remark": "水"
+    },
+    {
+      "id": "t_1780723329000_419",
+      "type": "expense",
+      "amount": 12.79,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-06",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780722170000_420",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-06",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1780719831000_421",
+      "type": "expense",
+      "amount": 37.9,
+      "category": "服饰",
+      "accountId": "wechat",
+      "date": "2026-06-06",
+      "remark": "短裤"
+    },
+    {
+      "id": "t_1780656190000_422",
+      "type": "expense",
+      "amount": 11.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-05",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1780636101000_423",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-05",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780549713000_424",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-04",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1780545022000_425",
+      "type": "expense",
+      "amount": 12.3,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-04",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780497046000_426",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-03",
+      "remark": "话费广电"
+    },
+    {
+      "id": "t_1780401638000_427",
+      "type": "expense",
+      "amount": 14.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-02",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1780373867000_428",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-02",
+      "remark": "午饭加一个午饭券。"
+    },
+    {
+      "id": "t_1780308139000_429",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-06-01",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1780308078000_430",
+      "type": "expense",
+      "amount": 10.11,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-01",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1780284296000_431",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-06-01",
+      "remark": "话费"
+    },
+    {
+      "id": "t_1780283384000_432",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-06-01",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780212023000_433",
+      "type": "expense",
+      "amount": 11.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-31",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1780126929000_434",
+      "type": "expense",
+      "amount": 12.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-30",
+      "remark": "餐饮"
+    },
+    {
+      "id": "t_1780102075000_435",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-30",
+      "remark": "早餐"
+    },
+    {
+      "id": "t_1780053042000_436",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-29",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1780051301000_437",
+      "type": "expense",
+      "amount": 13.76,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-29",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779962446000_438",
+      "type": "expense",
+      "amount": 28.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-28",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779869661000_439",
+      "type": "expense",
+      "amount": 14.66,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-27",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779847525000_440",
+      "type": "expense",
+      "amount": 12.2,
+      "category": "水果",
+      "accountId": "wechat",
+      "date": "2026-05-27",
+      "remark": "黄桃"
+    },
+    {
+      "id": "t_1779794889000_441",
+      "type": "expense",
+      "amount": 13.78,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-26",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779781056000_442",
+      "type": "expense",
+      "amount": 12.74,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-05-26",
+      "remark": "奶茶"
+    },
+    {
+      "id": "t_1779772111000_443",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-26",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779712665000_444",
+      "type": "expense",
+      "amount": 54.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-25",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779686759000_445",
+      "type": "expense",
+      "amount": 14.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779683872000_446",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-25",
+      "remark": "人脸信息采集"
+    },
+    {
+      "id": "t_1779683039000_447",
+      "type": "expense",
+      "amount": 2.3,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-25",
+      "remark": "团费"
+    },
+    {
+      "id": "t_1779666882000_448",
+      "type": "expense",
+      "amount": 10.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-25",
+      "remark": "早餐"
+    },
+    {
+      "id": "t_1779628018000_449",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-05-24",
+      "remark": "零食"
+    },
+    {
+      "id": "t_1779626035000_450",
+      "type": "expense",
+      "amount": 15.86,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-24",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779608689000_451",
+      "type": "expense",
+      "amount": 11.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-24",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779572128000_452",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-24",
+      "remark": "早餐"
+    },
+    {
+      "id": "t_1779569909000_453",
+      "type": "expense",
+      "amount": 2.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-24",
+      "remark": "水"
+    },
+    {
+      "id": "t_1779546845000_454",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-05-23",
+      "remark": "零食"
+    },
+    {
+      "id": "t_1779531079000_455",
+      "type": "expense",
+      "amount": 26.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-23",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779506894000_456",
+      "type": "expense",
+      "amount": 15.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-23",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779504952000_457",
+      "type": "expense",
+      "amount": 300.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-05-23",
+      "remark": "爸车罚款"
+    },
+    {
+      "id": "t_1779456240000_458",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-05-22",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1779456233000_459",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-22",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779421096000_460",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-22",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779362622000_461",
+      "type": "expense",
+      "amount": 10.77,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-21",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779341040000_462",
+      "type": "expense",
+      "amount": 26.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-21",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779269899000_463",
+      "type": "expense",
+      "amount": 22.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-20",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779242990000_464",
+      "type": "expense",
+      "amount": 12.1,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-20",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779186132000_465",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-19",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779181957000_466",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-05-19",
+      "remark": "雪糕"
+    },
+    {
+      "id": "t_1779168631000_467",
+      "type": "expense",
+      "amount": 12.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-19",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779111951000_468",
+      "type": "expense",
+      "amount": 65.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-18",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1779111948000_469",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-18",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1779021469000_470",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-17",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778992178000_471",
+      "type": "income",
+      "amount": 587.0,
+      "category": "其它",
+      "accountId": "wechat",
+      "date": "2026-05-17",
+      "remark": "助学金"
+    },
+    {
+      "id": "t_1778992157000_472",
+      "type": "expense",
+      "amount": 25.59,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778992147000_473",
+      "type": "expense",
+      "amount": 3.1,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-17",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1778946553000_474",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778946544000_475",
+      "type": "expense",
+      "amount": 12.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-16",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778826625000_476",
+      "type": "expense",
+      "amount": 26.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-15",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778745408000_477",
+      "type": "expense",
+      "amount": 32.92,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-14",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778673740000_478",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-13",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778638045000_479",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-13",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778591116000_480",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "学习",
+      "accountId": "wechat",
+      "date": "2026-05-12",
+      "remark": "刘晓燕4级。"
+    },
+    {
+      "id": "t_1778587017000_481",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-05-12",
+      "remark": "雪糕"
+    },
+    {
+      "id": "t_1778587010000_482",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-12",
+      "remark": "快递退货"
+    },
+    {
+      "id": "t_1778582663000_483",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-12",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778582659000_484",
+      "type": "expense",
+      "amount": 12.58,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-12",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778492837000_485",
+      "type": "expense",
+      "amount": 0.2,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-11",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1778492820000_486",
+      "type": "expense",
+      "amount": 11.38,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-11",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778492806000_487",
+      "type": "expense",
+      "amount": 12.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-11",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778413490000_488",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-05-10",
+      "remark": "出租"
+    },
+    {
+      "id": "t_1778412850000_489",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-10",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778397731000_490",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-10",
+      "remark": "桶装水"
+    },
+    {
+      "id": "t_1778397724000_491",
+      "type": "expense",
+      "amount": 5.0,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-05-10",
+      "remark": "冰淇淋"
+    },
+    {
+      "id": "t_1778397718000_492",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-10",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778384733000_493",
+      "type": "expense",
+      "amount": 500.0,
+      "category": "住房",
+      "accountId": "wechat",
+      "date": "2026-05-10",
+      "remark": "房租"
+    },
+    {
+      "id": "t_1778325041000_494",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-09",
+      "remark": "一提指纸，一包西梅。"
+    },
+    {
+      "id": "t_1778298700000_495",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-09",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778239903000_496",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "娱乐",
+      "accountId": "wechat",
+      "date": "2026-05-08",
+      "remark": "qq音乐"
+    },
+    {
+      "id": "t_1778232153000_497",
+      "type": "expense",
+      "amount": 13.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-08",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778216479000_498",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-08",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778146213000_499",
+      "type": "expense",
+      "amount": 11.38,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-07",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778120618000_500",
+      "type": "expense",
+      "amount": 13.75,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-07",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1778060832000_501",
+      "type": "expense",
+      "amount": 22.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-06",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1778055131000_502",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-05-06",
+      "remark": "lol手游"
+    },
+    {
+      "id": "t_1778051972000_503",
+      "type": "expense",
+      "amount": 37.03,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-06",
+      "remark": "护发素"
+    },
+    {
+      "id": "t_1778051895000_504",
+      "type": "expense",
+      "amount": 31.2,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-05-06",
+      "remark": "康王洗发水"
+    },
+    {
+      "id": "t_1778036531000_505",
+      "type": "expense",
+      "amount": 56.0,
+      "category": "服饰",
+      "accountId": "wechat",
+      "date": "2026-05-06",
+      "remark": "汗衫"
+    },
+    {
+      "id": "t_1778032391000_506",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-06",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777981757000_507",
+      "type": "expense",
+      "amount": 20.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-05",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777981748000_508",
+      "type": "expense",
+      "amount": 10.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-05",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777893341000_509",
+      "type": "expense",
+      "amount": 13.78,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-04",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777889043000_510",
+      "type": "expense",
+      "amount": 67.9,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-05-04",
+      "remark": "蛋糕"
+    },
+    {
+      "id": "t_1777871689000_511",
+      "type": "expense",
+      "amount": 59.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-04",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777871603000_512",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "娱乐",
+      "accountId": "wechat",
+      "date": "2026-05-04",
+      "remark": "索道"
+    },
+    {
+      "id": "t_1777871578000_513",
+      "type": "expense",
+      "amount": 4.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-05-04",
+      "remark": "地铁"
+    },
+    {
+      "id": "t_1777863831000_514",
+      "type": "expense",
+      "amount": 99.0,
+      "category": "娱乐",
+      "accountId": "wechat",
+      "date": "2026-05-04",
+      "remark": "艺水间"
+    },
+    {
+      "id": "t_1777823997000_515",
+      "type": "expense",
+      "amount": 85.0,
+      "category": "娱乐",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "东北虎园"
+    },
+    {
+      "id": "t_1777738261000_516",
+      "type": "income",
+      "amount": 200.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "妈妈五一"
+    },
+    {
+      "id": "t_1777737851000_517",
+      "type": "expense",
+      "amount": 26.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "公交，地铁，打车"
+    },
+    {
+      "id": "t_1777737802000_518",
+      "type": "expense",
+      "amount": 28.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "烟筒冰淇淋"
+    },
+    {
+      "id": "t_1777737797000_519",
+      "type": "expense",
+      "amount": 25.0,
+      "category": "娱乐",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "熊猫馆"
+    },
+    {
+      "id": "t_1777737792000_520",
+      "type": "expense",
+      "amount": 35.5,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "太阳岛骑车"
+    },
+    {
+      "id": "t_1777737786000_521",
+      "type": "expense",
+      "amount": 28.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777737778000_522",
+      "type": "expense",
+      "amount": 39.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-03",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777720257000_523",
+      "type": "expense",
+      "amount": 34.8,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-05-02",
+      "remark": "火车，地铁，公交"
+    },
+    {
+      "id": "t_1777703220000_524",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-02",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777651488000_525",
+      "type": "expense",
+      "amount": 227.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-02",
+      "remark": "饭加住宿"
+    },
+    {
+      "id": "t_1777638650000_526",
+      "type": "expense",
+      "amount": 22.21,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-01",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777610760000_527",
+      "type": "expense",
+      "amount": 19.09,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-05-01",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777564751000_528",
+      "type": "expense",
+      "amount": 23.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-04-30",
+      "remark": "火车票退票手续费。"
+    },
+    {
+      "id": "t_1777559502000_529",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-04-30",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1777559471000_530",
+      "type": "income",
+      "amount": 1000.0,
+      "category": "红包",
+      "accountId": "wechat",
+      "date": "2026-04-30",
+      "remark": "妈妈"
+    },
+    {
+      "id": "t_1777541314000_531",
+      "type": "expense",
+      "amount": 11.96,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-30",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777519768000_532",
+      "type": "expense",
+      "amount": 13.27,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-30",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777429255000_533",
+      "type": "expense",
+      "amount": 12.76,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-29",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777378996000_534",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-28",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777363637000_535",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-28",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777282026000_536",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-27",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777281453000_537",
+      "type": "expense",
+      "amount": 16.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-27",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777259521000_538",
+      "type": "expense",
+      "amount": 3.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-27",
+      "remark": "肉粽子"
+    },
+    {
+      "id": "t_1777247246000_539",
+      "type": "expense",
+      "amount": 1.8,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-04-27",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1777196421000_540",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-26",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777175598000_541",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-26",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777114135000_542",
+      "type": "expense",
+      "amount": 5.3,
+      "category": "书籍",
+      "accountId": "wechat",
+      "date": "2026-04-25",
+      "remark": "花生800。"
+    },
+    {
+      "id": "t_1777109775000_543",
+      "type": "expense",
+      "amount": 40.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-25",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1777093728000_544",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-04-25",
+      "remark": "桶装水"
+    },
+    {
+      "id": "t_1777090210000_545",
+      "type": "expense",
+      "amount": 17.7,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-25",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1777022727000_546",
+      "type": "expense",
+      "amount": 21.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-24",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776995802000_547",
+      "type": "expense",
+      "amount": 11.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-24",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776943208000_548",
+      "type": "expense",
+      "amount": 44.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-23",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776937657000_549",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-04-23",
+      "remark": "处理违章"
+    },
+    {
+      "id": "t_1776935650000_550",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-23",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776853183000_551",
+      "type": "expense",
+      "amount": 3.47,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-04-22",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1776851874000_552",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-22",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776851866000_553",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-22",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776814890000_554",
+      "type": "expense",
+      "amount": 6.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-22",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1776778838000_555",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-21",
+      "remark": "香葱大饼"
+    },
+    {
+      "id": "t_1776757915000_556",
+      "type": "expense",
+      "amount": 2.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-21",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776736038000_557",
+      "type": "expense",
+      "amount": 10.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-21",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1776691117000_558",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-20",
+      "remark": "香葱大饼"
+    },
+    {
+      "id": "t_1776677486000_559",
+      "type": "expense",
+      "amount": 13.27,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-20",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776658671000_560",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-20",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776641984000_561",
+      "type": "expense",
+      "amount": 8.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-20",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1776640671000_562",
+      "type": "expense",
+      "amount": 0.05,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-04-20",
+      "remark": "吹头发"
+    },
+    {
+      "id": "t_1776607198000_563",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-04-19",
+      "remark": "拖鞋"
+    },
+    {
+      "id": "t_1776589437000_564",
+      "type": "expense",
+      "amount": 11.59,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-19",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776569852000_565",
+      "type": "expense",
+      "amount": 11.88,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-19",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776515551000_566",
+      "type": "expense",
+      "amount": 24.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-04-18",
+      "remark": "lol"
+    },
+    {
+      "id": "t_1776515506000_567",
+      "type": "expense",
+      "amount": 63.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-18",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776488474000_568",
+      "type": "expense",
+      "amount": 100.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-04-18",
+      "remark": "话费"
+    },
+    {
+      "id": "t_1776486394000_569",
+      "type": "expense",
+      "amount": 14.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-18",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776470185000_570",
+      "type": "expense",
+      "amount": 7.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-18",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1776417989000_571",
+      "type": "income",
+      "amount": 587.0,
+      "category": "其它",
+      "accountId": "wechat",
+      "date": "2026-04-17",
+      "remark": "助学金"
+    },
+    {
+      "id": "t_1776417940000_572",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-17",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776404316000_573",
+      "type": "expense",
+      "amount": 1.3,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-04-17",
+      "remark": "打印"
+    },
+    {
+      "id": "t_1776390378000_574",
+      "type": "expense",
+      "amount": 9.2,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-17",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776332010000_575",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-16",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776308835000_576",
+      "type": "expense",
+      "amount": 10.49,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-16",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776250184000_577",
+      "type": "expense",
+      "amount": 13.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-15",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776226900000_578",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-15",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776162423000_579",
+      "type": "expense",
+      "amount": 13.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-14",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776146485000_580",
+      "type": "expense",
+      "amount": 12.76,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-14",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1776141806000_581",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "日用",
+      "accountId": "wechat",
+      "date": "2026-04-14",
+      "remark": "水"
+    },
+    {
+      "id": "t_1776141798000_582",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-14",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1776076385000_583",
+      "type": "expense",
+      "amount": 30.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-13",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1776060421000_584",
+      "type": "expense",
+      "amount": 7.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-13",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1775987567000_585",
+      "type": "expense",
+      "amount": 14.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-12",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775966751000_586",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-12",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775896765000_587",
+      "type": "expense",
+      "amount": 10.27,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-11",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775882210000_588",
+      "type": "expense",
+      "amount": 500.0,
+      "category": "住房",
+      "accountId": "wechat",
+      "date": "2026-04-11",
+      "remark": "房租"
+    },
+    {
+      "id": "t_1775882180000_589",
+      "type": "expense",
+      "amount": 15.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-11",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775821605000_590",
+      "type": "expense",
+      "amount": 68.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-10",
+      "remark": "状元阁"
+    },
+    {
+      "id": "t_1775821593000_591",
+      "type": "expense",
+      "amount": 6.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-04-10",
+      "remark": "打车"
+    },
+    {
+      "id": "t_1775797267000_592",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-10",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775733498000_593",
+      "type": "expense",
+      "amount": 7.9,
+      "category": "水果",
+      "accountId": "wechat",
+      "date": "2026-04-09",
+      "remark": "水果"
+    },
+    {
+      "id": "t_1775732483000_594",
+      "type": "expense",
+      "amount": 12.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-09",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775722218000_595",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-09",
+      "remark": "QQ音乐"
+    },
+    {
+      "id": "t_1775712896000_596",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-09",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775636618000_597",
+      "type": "expense",
+      "amount": 15.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-08",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775613264000_598",
+      "type": "expense",
+      "amount": 8.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-08",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1775553395000_599",
+      "type": "expense",
+      "amount": 13.99,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-07",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775547775000_600",
+      "type": "expense",
+      "amount": 14.5,
+      "category": "医疗",
+      "accountId": "wechat",
+      "date": "2026-04-07",
+      "remark": "涂脸的"
+    },
+    {
+      "id": "t_1775528670000_601",
+      "type": "expense",
+      "amount": 12.07,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-07",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775470222000_602",
+      "type": "expense",
+      "amount": 11.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-06",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775449656000_603",
+      "type": "expense",
+      "amount": 13.5,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-06",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775391583000_604",
+      "type": "expense",
+      "amount": 15.8,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-05",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775357670000_605",
+      "type": "expense",
+      "amount": 80.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-04-05",
+      "remark": "街霸"
+    },
+    {
+      "id": "t_1775357662000_606",
+      "type": "expense",
+      "amount": 9.48,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-05",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775316659000_607",
+      "type": "expense",
+      "amount": 18.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-04",
+      "remark": "水"
+    },
+    {
+      "id": "t_1775297597000_608",
+      "type": "expense",
+      "amount": 11.45,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-04",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775278028000_609",
+      "type": "expense",
+      "amount": 9.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-04-04",
+      "remark": "游戏"
+    },
+    {
+      "id": "t_1775277246000_610",
+      "type": "expense",
+      "amount": 344.0,
+      "category": "游戏",
+      "accountId": "wechat",
+      "date": "2026-04-04",
+      "remark": "游戏"
+    },
+    {
+      "id": "t_1775273464000_611",
+      "type": "expense",
+      "amount": 24.78,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-04",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775209487000_612",
+      "type": "expense",
+      "amount": 15.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-03",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775194533000_613",
+      "type": "expense",
+      "amount": 11.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-03",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775129546000_614",
+      "type": "expense",
+      "amount": 15.27,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-02",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775108992000_615",
+      "type": "expense",
+      "amount": 9.9,
+      "category": "零食",
+      "accountId": "wechat",
+      "date": "2026-04-02",
+      "remark": "酸奶"
+    },
+    {
+      "id": "t_1775108676000_616",
+      "type": "expense",
+      "amount": 32.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-02",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775106384000_617",
+      "type": "income",
+      "amount": 587.0,
+      "category": "工资",
+      "accountId": "wechat",
+      "date": "2026-04-02",
+      "remark": "助学金"
+    },
+    {
+      "id": "t_1775040212000_618",
+      "type": "expense",
+      "amount": 10.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-01",
+      "remark": "晚饭"
+    },
+    {
+      "id": "t_1775036248000_619",
+      "type": "expense",
+      "amount": 50.0,
+      "category": "通讯",
+      "accountId": "wechat",
+      "date": "2026-04-01",
+      "remark": "卡二话费"
+    },
+    {
+      "id": "t_1775016675000_620",
+      "type": "expense",
+      "amount": 14.9,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-01",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1775009056000_621",
+      "type": "expense",
+      "amount": 5.4,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-04-01",
+      "remark": "早饭"
+    },
+    {
+      "id": "t_1774951447000_622",
+      "type": "expense",
+      "amount": 11.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-03-31",
+      "remark": "HDMI线"
+    },
+    {
+      "id": "t_1774950527000_623",
+      "type": "expense",
+      "amount": 20.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-03-31",
+      "remark": "大份烤鸭米饭"
+    },
+    {
+      "id": "t_1774933832000_624",
+      "type": "expense",
+      "amount": 14.0,
+      "category": "交通",
+      "accountId": "wechat",
+      "date": "2026-03-31",
+      "remark": "去万达来回（电脑清灰）"
+    },
+    {
+      "id": "t_1774933798000_625",
+      "type": "expense",
+      "amount": 80.0,
+      "category": "维修",
+      "accountId": "wechat",
+      "date": "2026-03-31",
+      "remark": "电脑清灰换硅脂"
+    },
+    {
+      "id": "t_1774930889000_626",
+      "type": "expense",
+      "amount": 11.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-03-31",
+      "remark": "午饭"
+    },
+    {
+      "id": "t_1774871445000_627",
+      "type": "expense",
+      "amount": 14.8,
+      "category": "购物",
+      "accountId": "wechat",
+      "date": "2026-03-30",
+      "remark": "酸奶"
+    },
+    {
+      "id": "t_1774871417000_628",
+      "type": "expense",
+      "amount": 16.6,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-03-30",
+      "remark": "硅脂加剪刀"
+    },
+    {
+      "id": "t_1774871353000_629",
+      "type": "expense",
+      "amount": 75.0,
+      "category": "餐饮",
+      "accountId": "wechat",
+      "date": "2026-03-30",
+      "remark": "辣二家"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "wechat",
+      "name": "微信零钱",
+      "type": "asset",
+      "balance": 0,
+      "icon": "💬",
+      "bgColor": "#DCFCE7",
+      "remark": ""
+    },
+    {
+      "id": "alipay",
+      "name": "支付宝",
+      "type": "asset",
+      "balance": 0,
+      "icon": "🔷",
+      "bgColor": "#E0F2FE",
+      "remark": ""
+    },
+    {
+      "id": "bank",
+      "name": "银行卡",
+      "type": "asset",
+      "balance": 0,
+      "icon": "🏦",
+      "bgColor": "#FEE2E2",
+      "remark": ""
+    }
+  ],
+  "budget": {
+    "monthlyLimit": 5000,
+    "categoryLimits": {}
+  },
+  "exportAt": "2026-10-28T16:37:46.153779"
+}
