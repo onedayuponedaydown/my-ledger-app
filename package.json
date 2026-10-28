@@ -4,7 +4,8 @@
   "description": "",
   "main": "sw.js",
   "scripts": {
-    "start": "node start.js"
+    "start": "node start.js",
+    "build": "mkdir -p dist && cp -r index.html manifest.json sw.js icons lib dist/ && npx cap sync android"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +15,9 @@
     "@capacitor/core": "^8.5.3",
     "qrcode-terminal": "^0.12.0",
     "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3"
   }
 }

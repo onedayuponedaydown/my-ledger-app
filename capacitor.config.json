@@ -1,7 +1,7 @@
 {
   "appId": "com.local.myledger",
   "appName": "清爽记账",
-  "webDir": ".",
+  "webDir": "dist",
   "server": {
     "androidScheme": "https"
   }
