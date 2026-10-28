@@ -527,35 +527,147 @@
       font-weight: 500;
     }
 
-    /* Meta bar (Account, Date, Note) */
-    .meta-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 16px;
+    /* Beautified Record Config Section & Remark Area */
+    .record-config-section {
       background: #FFFFFF;
       border-top: 1px solid #F1F5F9;
-      font-size: 0.82rem;
+      padding: 10px 16px 8px 16px;
     }
-    .meta-chip {
+    .meta-row {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 8px;
+      margin-bottom: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .meta-row::-webkit-scrollbar { display: none; }
+    
+    .meta-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       background: #F8FAFC;
       border: 1px solid var(--border);
-      padding: 5px 10px;
-      border-radius: 12px;
-      cursor: pointer;
+      padding: 6px 12px;
+      border-radius: 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #334155;
       white-space: nowrap;
     }
-    .meta-note-input {
+    .meta-pill select {
+      border: none;
+      background: transparent;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #0F172A;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .remark-input-wrap {
+      display: flex;
+      align-items: center;
+      background: #F8FAFC;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 8px 12px;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .remark-input-wrap:focus-within {
+      background: #FFFFFF;
+      border-color: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+    }
+    .remark-input-field {
       flex: 1;
       border: none;
-      background: #F8FAFC;
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-size: 0.85rem;
+      background: transparent;
+      font-size: 0.88rem;
+      color: #0F172A;
       outline: none;
+    }
+
+    .quick-tags-scroll {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .quick-tags-scroll::-webkit-scrollbar { display: none; }
+
+    .tag-chip {
+      padding: 4px 10px;
+      background: #F1F5F9;
+      color: #475569;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+    .tag-chip:active, .tag-chip.active {
+      background: #DCFCE7;
+      color: #065F46;
+      border-color: #86EFAC;
+      font-weight: 700;
+    }
+
+    /* Icon & Color Pickers for Accounts */
+    .icon-picker-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+      max-height: 125px;
+      overflow-y: auto;
+      padding: 4px 2px;
+    }
+    .icon-picker-grid::-webkit-scrollbar { display: none; }
+
+    .icon-picker-item {
+      height: 38px;
+      border-radius: 12px;
+      border: 1.5px solid #E2E8F0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+      background: #FFFFFF;
+      transition: all 0.15s ease;
+    }
+    .icon-picker-item.selected {
+      border-color: #10B981;
+      background: #ECFDF5;
+      box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.25);
+    }
+
+    .color-picker-row {
+      display: flex;
+      gap: 10px;
+      padding: 6px 2px;
+      overflow-x: auto;
+    }
+    .color-picker-item {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2.5px solid transparent;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: transform 0.15s ease;
+    }
+    .color-picker-item.selected {
+      border-color: #0F172A;
+      transform: scale(1.15);
     }
 
     /* Calculator Keypad */
@@ -563,15 +675,15 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(4, 52px);
-      gap: 4px;
-      padding: 8px;
+      gap: 5px;
+      padding: 8px 10px;
       background: #F1F5F9;
     }
     .key-btn {
       background: #FFFFFF;
       border: none;
-      border-radius: 10px;
-      font-size: 1.25rem;
+      border-radius: 12px;
+      font-size: 1.3rem;
       font-weight: 600;
       color: #0F172A;
       display: flex;
@@ -579,10 +691,11 @@
       justify-content: center;
       cursor: pointer;
       box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-      transition: background 0.1s;
+      transition: all 0.1s;
     }
     .key-btn:active {
       background: #E2E8F0;
+      transform: scale(0.97);
     }
     .key-op {
       background: #F8FAFC;
@@ -1010,6 +1123,30 @@
           </div>
         </div>
 
+        <!-- Recurring Tasks Card (定时扣费与收入) -->
+        <div class="stat-card" style="cursor: pointer; padding: 14px 16px; border: 1.5px solid #E2E8F0; margin-bottom: 16px; transition: background 0.15s;" @click="openRecurringModal">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 44px; height: 44px; border-radius: 14px; background: #EEF2FF; display: flex; align-items: center; justify-content: center; font-size: 1.4rem;">
+                ⏱️
+              </div>
+              <div>
+                <div style="font-weight: 700; font-size: 0.95rem; color: #0F172A; display: flex; align-items: center; gap: 6px;">
+                  <span>定时扣费与收入</span>
+                  <span class="item-acc-tag" style="background: #ECFDF5; color: #059669; font-weight: 700;">{{ recurringTasks.length }} 项</span>
+                </div>
+                <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">
+                  每月固定房租、工资、套餐等自动定时入账与扣费
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+              <span class="pill-btn" style="padding: 4px 10px; font-size: 0.75rem; background: #F1F5F9;">管理</span>
+              <span style="font-size: 0.95rem; color: #94A3B8;">›</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Data & Settings -->
         <div class="stat-card">
           <div class="card-title">⚙️ 数据备份与管理 (完全本地)</div>
@@ -1136,28 +1273,50 @@
           </div>
         </div>
 
-        <!-- Meta Bar: Account, Date, Note -->
-        <div class="meta-bar">
-          <div v-if="currentForm.type !== 'transfer'" class="meta-chip">
-            <span>💳</span>
-            <select v-model="currentForm.accountId" style="border: none; background: transparent; font-size: 0.82rem; font-weight: 600; color: #0F172A; outline: none; cursor: pointer;">
-              <option v-for="acc in accounts" :key="acc.id" :value="acc.id">
-                {{ acc.name }} (¥{{ formatNumber(acc.balance) }})
-              </option>
-            </select>
+        <!-- Record Config Section (美化账户、日期、醒目备注框与快捷标签) -->
+        <div class="record-config-section">
+          <!-- Row 1: 账户与日期 -->
+          <div class="meta-row">
+            <div v-if="currentForm.type !== 'transfer'" class="meta-pill">
+              <span>💳</span>
+              <select v-model="currentForm.accountId">
+                <option v-for="acc in accounts" :key="acc.id" :value="acc.id">
+                  {{ acc.name }} (¥{{ formatNumber(acc.balance) }})
+                </option>
+              </select>
+            </div>
+            <div class="meta-pill">
+              <span>📅</span>
+              <input type="date" v-model="currentForm.date" style="border: none; background: transparent; font-size: 0.8rem; font-weight: 600; color: #0F172A; outline: none; cursor: pointer;">
+            </div>
+            <button type="button" class="pill-btn" style="padding: 5px 10px; font-size: 0.75rem;" :class="{ active: isToday(currentForm.date) }" @click="setFormDateOffset(0)">今天</button>
+            <button type="button" class="pill-btn" style="padding: 5px 10px; font-size: 0.75rem;" :class="{ active: isYesterday(currentForm.date) }" @click="setFormDateOffset(-1)">昨天</button>
           </div>
-          <div class="meta-chip">
-            <span>📅</span>
-            <input type="date" v-model="currentForm.date" style="border: none; background: transparent; font-size: 0.82rem; font-weight: 600; color: #0F172A; outline: none; cursor: pointer;">
+
+          <!-- Row 2: 独立醒目的消费备注输入框 -->
+          <div class="remark-input-wrap">
+            <span style="font-size: 1rem; color: #10B981;">✏️</span>
+            <input 
+              type="text" 
+              class="remark-input-field" 
+              placeholder="输入消费备注（如：外卖、打车、聚餐）" 
+              v-model="currentForm.remark"
+            >
+            <button v-if="currentForm.remark" type="button" style="border: none; background: none; color: #94A3B8; font-size: 0.85rem; cursor: pointer; padding: 2px 6px;" @click="currentForm.remark = ''">✕</button>
           </div>
-          <button type="button" class="pill-btn" style="padding: 4px 8px; font-size: 0.72rem; margin-right: 2px;" :class="{ active: isToday(currentForm.date) }" @click="setFormDateOffset(0)">今天</button>
-          <button type="button" class="pill-btn" style="padding: 4px 8px; font-size: 0.72rem; margin-right: 4px;" :class="{ active: isYesterday(currentForm.date) }" @click="setFormDateOffset(-1)">昨天</button>
-          <input 
-            type="text" 
-            class="meta-note-input" 
-            placeholder="添加备注（如：麦当劳、打车）" 
-            v-model="currentForm.remark"
-          >
+
+          <!-- Row 3: 智能分类快捷备注标签 -->
+          <div class="quick-tags-scroll" v-if="currentQuickTags.length > 0">
+            <span 
+              v-for="tag in currentQuickTags" 
+              :key="tag" 
+              class="tag-chip"
+              :class="{ active: currentForm.remark === tag }"
+              @click="currentForm.remark = tag"
+            >
+              {{ tag }}
+            </span>
+          </div>
         </div>
 
         <!-- Built-in Numeric Keypad -->
@@ -1221,58 +1380,163 @@
       </div>
     </div>
 
-    <!-- ADD ACCOUNT MODAL -->
+    <!-- ADD ACCOUNT MODAL (支持专属图标选择、个性化颜色、备注说明) -->
     <div v-if="showAddAccountModal" class="modal-overlay" @click.self="showAddAccountModal = false">
-      <div class="sheet-container" style="padding: 24px;">
-        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px;">添加新资金账户</h3>
+      <div class="sheet-container" style="padding: 22px 20px 28px 20px; max-height: 85vh; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <h3 style="font-size: 1.1rem; font-weight: 700;">添加资金账户</h3>
+          <button class="close-btn" @click="showAddAccountModal = false">✕</button>
+        </div>
+
+        <!-- Live Preview Card -->
+        <div style="padding: 12px 14px; border-radius: 16px; border: 1px solid var(--border); background: #F8FAFC; display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div style="width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;" :style="{ backgroundColor: newAcc.bgColor || '#E0E7FF' }">
+            {{ newAcc.icon || '🏦' }}
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 1rem; color: #0F172A;">{{ newAcc.name || '账户名称预览' }}</div>
+            <div style="font-size: 0.75rem; color: #64748B;">{{ newAcc.remark || (newAcc.type === 'liability' ? '负债账户' : '资产账户') }} · 初始 ¥{{ formatNumber(newAcc.balance) }}</div>
+          </div>
+        </div>
+
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <div>
-            <label style="font-size: 0.8rem; color: #64748B;">账户名称</label>
-            <input type="text" v-model="newAcc.name" placeholder="如：建行工资卡、零钱通" style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px;">
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">账户名称</label>
+            <input type="text" v-model="newAcc.name" placeholder="如：招行工资卡、微信零钱通、花呗" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.9rem;">
           </div>
+
+          <!-- Icon Picker -->
           <div>
-            <label style="font-size: 0.8rem; color: #64748B;">账户类型</label>
-            <select v-model="newAcc.type" style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px;">
-              <option value="asset">资产账户（储蓄卡、微信、现金）</option>
-              <option value="liability">负债账户（信用卡、花呗）</option>
-            </select>
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">选择专属图标</label>
+            <div class="icon-picker-grid" style="margin-top: 4px;">
+              <div 
+                v-for="ic in ACCOUNT_ICONS" 
+                :key="ic" 
+                class="icon-picker-item"
+                :class="{ selected: newAcc.icon === ic }"
+                @click="newAcc.icon = ic"
+              >
+                {{ ic }}
+              </div>
+            </div>
           </div>
+
+          <!-- Color Picker -->
           <div>
-            <label style="font-size: 0.8rem; color: #64748B;">当前初始余额 (元)</label>
-            <input type="number" v-model="newAcc.balance" placeholder="0.00" style="width: 100%; padding: 10px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px;">
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">卡片主题色</label>
+            <div class="color-picker-row" style="margin-top: 4px;">
+              <div 
+                v-for="col in ACCOUNT_COLORS" 
+                :key="col" 
+                class="color-picker-item"
+                :style="{ backgroundColor: col }"
+                :class="{ selected: newAcc.bgColor === col }"
+                @click="newAcc.bgColor = col"
+              >
+                <span v-if="newAcc.bgColor === col" style="font-size: 0.75rem; color: #0F172A;">✓</span>
+              </div>
+            </div>
           </div>
-          <button class="btn-block btn-primary" style="margin-top: 10px;" @click="saveNewAccount">保存账户</button>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">账户性质</label>
+              <select v-model="newAcc.type" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.85rem; font-weight: 600;">
+                <option value="asset">资产（储蓄/微信/现金）</option>
+                <option value="liability">负债（信用卡/花呗）</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">初始余额 (元)</label>
+              <input type="number" step="0.01" v-model="newAcc.balance" placeholder="0.00" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 700; font-size: 0.95rem;">
+            </div>
+          </div>
+
+          <div>
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">卡号 / 备注说明</label>
+            <input type="text" v-model="newAcc.remark" placeholder="如：后四位8888、房贷专用、零花备用等" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.9rem;">
+          </div>
+
+          <button class="btn-block btn-primary" style="margin-top: 6px;" @click="saveNewAccount">✨ 保存新账户</button>
         </div>
       </div>
     </div>
 
-    <!-- EDIT ACCOUNT MODAL (管理与删除账户) -->
+    <!-- EDIT ACCOUNT MODAL (管理与删除账户，支持修改图标、颜色与备注) -->
     <div v-if="editingAccount" class="modal-overlay" @click.self="editingAccount = null">
-      <div class="sheet-container" style="padding: 24px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+      <div class="sheet-container" style="padding: 22px 20px 28px 20px; max-height: 85vh; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
           <h3 style="font-size: 1.1rem; font-weight: 700;">管理账户</h3>
           <button class="close-btn" @click="editingAccount = null">✕</button>
         </div>
 
+        <!-- Live Preview Card -->
+        <div style="padding: 12px 14px; border-radius: 16px; border: 1px solid var(--border); background: #F8FAFC; display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div style="width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;" :style="{ backgroundColor: editingAccount.bgColor || '#E0E7FF' }">
+            {{ editingAccount.icon || '🏦' }}
+          </div>
+          <div>
+            <div style="font-weight: 700; font-size: 1rem; color: #0F172A;">{{ editingAccount.name }}</div>
+            <div style="font-size: 0.75rem; color: #64748B;">{{ editingAccount.remark || (editingAccount.type === 'liability' ? '负债账户' : '资产账户') }} · 当前 ¥{{ formatNumber(editingAccount.balance) }}</div>
+          </div>
+        </div>
+
         <div style="display: flex; flex-direction: column; gap: 12px;">
           <div>
-            <label style="font-size: 0.8rem; color: #64748B;">账户名称</label>
-            <input type="text" v-model="editingAccount.name" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 600;">
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">账户名称</label>
+            <input type="text" v-model="editingAccount.name" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 600;">
           </div>
+
+          <!-- Icon Picker -->
           <div>
-            <label style="font-size: 0.8rem; color: #64748B;">账户类型</label>
-            <select v-model="editingAccount.type" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 600;">
-              <option value="asset">资产账户（储蓄卡、微信、支付宝、现金）</option>
-              <option value="liability">负债账户（信用卡、花呗、欠款）</option>
-            </select>
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">修改专属图标</label>
+            <div class="icon-picker-grid" style="margin-top: 4px;">
+              <div 
+                v-for="ic in ACCOUNT_ICONS" 
+                :key="ic" 
+                class="icon-picker-item"
+                :class="{ selected: editingAccount.icon === ic }"
+                @click="editingAccount.icon = ic"
+              >
+                {{ ic }}
+              </div>
+            </div>
           </div>
+
+          <!-- Color Picker -->
           <div>
-            <label style="font-size: 0.8rem; color: #64748B;">当前余额 (元)</label>
-            <input type="number" step="0.01" v-model.number="editingAccount.balance" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 700; font-size: 1.1rem;">
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">卡片主题色</label>
+            <div class="color-picker-row" style="margin-top: 4px;">
+              <div 
+                v-for="col in ACCOUNT_COLORS" 
+                :key="col" 
+                class="color-picker-item"
+                :style="{ backgroundColor: col }"
+                :class="{ selected: editingAccount.bgColor === col }"
+                @click="editingAccount.bgColor = col"
+              >
+                <span v-if="editingAccount.bgColor === col" style="font-size: 0.75rem; color: #0F172A;">✓</span>
+              </div>
+            </div>
           </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">账户性质</label>
+              <select v-model="editingAccount.type" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.85rem; font-weight: 600;">
+                <option value="asset">资产账户（储蓄卡、微信、现金）</option>
+                <option value="liability">负债账户（信用卡、花呗、欠款）</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">当前余额 (元)</label>
+              <input type="number" step="0.01" v-model.number="editingAccount.balance" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 700; font-size: 1.05rem;">
+            </div>
+          </div>
+
           <div>
-            <label style="font-size: 0.8rem; color: #64748B;">卡号 / 备注说明</label>
-            <input type="text" v-model="editingAccount.remark" placeholder="如：后四位1234、工资卡" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px;">
+            <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">卡号 / 备注说明</label>
+            <input type="text" v-model="editingAccount.remark" placeholder="如：后四位1234、工资卡" style="width: 100%; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px;">
           </div>
 
           <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
@@ -1319,6 +1583,128 @@
             </div>
             <div class="item-amount" :class="item.type === 'expense' ? 'amount-expense' : 'amount-income'">
               {{ item.type === 'expense' ? '-' : '+' }}¥{{ formatNumber(item.amount) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECURRING TASKS MODAL (定时扣费与收入管理) -->
+    <div v-if="showRecurringModal" class="modal-overlay" @click.self="showRecurringModal = false">
+      <div class="sheet-container" style="padding: 22px 20px 28px 20px; max-height: 85vh; overflow-y: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700;">⏱️ 定时扣费与收入</h3>
+            <div style="font-size: 0.75rem; color: #64748B; margin-top: 2px;">到期自动扣费记账，支持每月/每日定时</div>
+          </div>
+          <button class="close-btn" @click="showRecurringModal = false">✕</button>
+        </div>
+
+        <!-- Add Button / Switch to form -->
+        <button v-if="!showAddRecurringForm" class="btn-block btn-primary" style="margin-bottom: 14px;" @click="showAddRecurringForm = true">
+          ＋ 新增定时扣费/收入任务
+        </button>
+
+        <!-- New Recurring Form -->
+        <div v-if="showAddRecurringForm" style="background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 18px; padding: 16px; margin-bottom: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span style="font-weight: 700; font-size: 0.95rem; color: #0F172A;">新增定时计划</span>
+            <button type="button" class="close-btn" style="width: 26px; height: 26px; font-size: 0.85rem;" @click="showAddRecurringForm = false">✕</button>
+          </div>
+
+          <!-- Type Switcher -->
+          <div class="type-tab-group" style="margin-bottom: 12px;">
+            <div class="type-tab" :class="{ active: newRecForm.type === 'expense' }" @click="newRecForm.type = 'expense'">支出扣费</div>
+            <div class="type-tab" :class="{ active: newRecForm.type === 'income' }" @click="newRecForm.type = 'income'">收入入账</div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">任务名称</label>
+              <input type="text" v-model="newRecForm.name" placeholder="如：每月房租、手机月租、每月发薪" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.88rem;">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div>
+                <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">扣款金额 (元)</label>
+                <input type="number" step="0.01" v-model="newRecForm.amount" placeholder="0.00" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px; font-weight: 700; font-size: 0.95rem;">
+              </div>
+              <div>
+                <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">所属分类</label>
+                <select v-model="newRecForm.category" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.85rem;">
+                  <option v-for="c in (newRecForm.type === 'expense' ? EXPENSE_CATEGORIES : INCOME_CATEGORIES)" :key="c.name" :value="c.name">
+                    {{ c.icon }} {{ c.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div>
+                <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">扣款/入账账户</label>
+                <select v-model="newRecForm.accountId" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.85rem;">
+                  <option v-for="a in accounts" :key="a.id" :value="a.id">
+                    {{ a.name }}
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">扣款周期</label>
+                <select v-model="newRecForm.frequency" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.85rem;">
+                  <option value="monthly">每月固定日</option>
+                  <option value="daily">每日固定</option>
+                </select>
+              </div>
+            </div>
+
+            <div v-if="newRecForm.frequency === 'monthly'">
+              <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">每月扣款日 (1 ~ 31 日)</label>
+              <select v-model.number="newRecForm.dayOfMonth" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.85rem; font-weight: 600;">
+                <option v-for="d in 31" :key="d" :value="d">每月 {{ d }} 号</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 0.8rem; font-weight: 600; color: #475569;">备注说明 (选填)</label>
+              <input type="text" v-model="newRecForm.remark" placeholder="如：房东张阿姨、自动续费" style="width: 100%; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); margin-top: 4px; font-size: 0.85rem;">
+            </div>
+
+            <button class="btn-block btn-primary" style="margin-top: 8px;" @click="saveNewRecurringTask">💾 保存定时任务</button>
+          </div>
+        </div>
+
+        <!-- Existing Tasks List -->
+        <div>
+          <div v-if="recurringTasks.length === 0 && !showAddRecurringForm" style="text-align: center; color: #94A3B8; padding: 36px 0;">
+            <div style="font-size: 2.5rem; margin-bottom: 8px;">⏱️</div>
+            <p style="font-weight: 600;">暂无定时扣费/收入任务</p>
+            <p style="font-size: 0.78rem; margin-top: 4px;">点击上方按钮添加每月房租、工资等定期收支</p>
+          </div>
+
+          <div v-for="task in recurringTasks" :key="task.id" class="trans-item" style="padding: 12px; border: 1px solid #E2E8F0; border-radius: 14px; margin-bottom: 10px; background: #FFFFFF;">
+            <div class="item-icon" :style="{ backgroundColor: task.type === 'expense' ? '#FEE2E2' : '#DCFCE7' }">
+              {{ task.type === 'expense' ? '💸' : '💰' }}
+            </div>
+            <div class="item-info">
+              <div class="item-title">
+                <span>{{ task.name }}</span>
+                <span class="item-acc-tag" style="background: #EEF2FF; color: #4F46E5;">
+                  {{ task.frequency === 'monthly' ? `每月${task.dayOfMonth}日` : '每日' }}
+                </span>
+                <span class="item-acc-tag">{{ getAccountName(task.accountId) }}</span>
+              </div>
+              <div class="item-remark">
+                {{ task.category }} · {{ task.remark || '定时自动记账' }} · 上次执行: {{ task.lastExecutedDate || '尚未执行' }}
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px;">
+              <div class="item-amount" :class="task.type === 'expense' ? 'amount-expense' : 'amount-income'">
+                {{ task.type === 'expense' ? '-' : '+' }}¥{{ formatNumber(task.amount) }}
+              </div>
+              <div style="display: flex; gap: 4px;">
+                <button class="pill-btn" style="padding: 2px 6px; font-size: 0.68rem;" @click.stop="manualRunTask(task)">立即执行</button>
+                <button class="pill-btn" style="padding: 2px 6px; font-size: 0.68rem; color: #EF4444;" @click.stop="deleteRecurringTask(task)">删除</button>
+              </div>
             </div>
           </div>
         </div>
@@ -1409,6 +1795,32 @@
       { id: 't7', type: 'expense', amount: 260.00, category: '餐饮美食', accountId: 'credit', date: '2026-10-18', remark: '朋友聚餐' }
     ];
 
+    const ACCOUNT_ICONS = [
+      '💬', '🔷', '🏦', '💳', '💵', '🪙', '📈', '🏠', '🚗', '🚌', '☕', '🎮', '🤝', '🎁', '📱', '💼', '🛍️', '🔒'
+    ];
+
+    const ACCOUNT_COLORS = [
+      '#DCFCE7', '#E0F2FE', '#FEE2E2', '#FEF3C7', '#EDE9FE', '#FFEDD5', '#F1F5F9'
+    ];
+
+    const CATEGORY_TAGS = {
+      '餐饮美食': ['午饭', '晚饭', '早餐', '外卖', '咖啡', '奶茶', '聚餐', '夜宵', '水果'],
+      '交通出行': ['打车', '地铁', '公交', '加油', '停车费', '高铁票', '机票'],
+      '商超购物': ['超市采购', '日用品', '衣服鞋包', '网购快递', '零食零嘴'],
+      '休闲娱乐': ['电影票', '游戏充值', 'KTV聚会', '剧本杀', '景点门票'],
+      '日常居家': ['房租', '水电煤', '宽带网费', '物业费', '居家维修'],
+      '服饰美容': ['买衣服', '理发美发', '护肤品', '饰品'],
+      '医疗健康': ['看病挂号', '药房买药', '体检', '医美'],
+      '数码电器': ['数码配件', '家电维修', '手机配件'],
+      '通讯网络': ['手机话费', '宽带费', '视频会员', '音乐会员'],
+      '学习培训': ['买书教材', '培训课程', '考证报名'],
+      '人情社交': ['份子钱', '请客聚餐', '礼物送礼', '红包'],
+      '工资薪水': ['基本月薪', '绩效奖金', '差旅报销', '加班费'],
+      '兼职副业': ['兼职酬劳', '劳务费用', '副业收益'],
+      '年终奖金': ['年终大奖', '季度分红'],
+      '理财收益': ['基金收益', '理财分红', '银行利息']
+    };
+
     createApp({
       setup() {
         const activeTab = ref('records');
@@ -1439,6 +1851,8 @@
         const selectedItem = ref(null);
         const showAddAccountModal = ref(false);
         const editingAccount = ref(null);
+        const showRecurringModal = ref(false);
+        const showAddRecurringForm = ref(false);
         const statOrdersModal = ref({
           visible: false,
           title: '',
@@ -1446,6 +1860,19 @@
           filterValue: null
         });
         const fileInput = ref(null);
+
+        // Recurring tasks
+        const recurringTasks = ref([]);
+        const newRecForm = ref({
+          name: '',
+          type: 'expense',
+          amount: 0,
+          category: '日常居家',
+          accountId: 'wechat',
+          frequency: 'monthly',
+          dayOfMonth: 20,
+          remark: ''
+        });
 
         const currentForm = ref({
           id: '',
@@ -1463,7 +1890,14 @@
         const newAcc = ref({
           name: '',
           type: 'asset',
-          balance: 0
+          balance: 0,
+          icon: '🏦',
+          bgColor: '#DCFCE7',
+          remark: ''
+        });
+
+        const currentQuickTags = computed(() => {
+          return CATEGORY_TAGS[currentForm.value.category] || ['日常开销', '个人消费', '朋友聚会'];
         });
 
         const showToast = (msg) => {
@@ -1477,6 +1911,7 @@
             localStorage.setItem('ledger_transactions', JSON.stringify(transactions.value));
             localStorage.setItem('ledger_accounts', JSON.stringify(accounts.value));
             localStorage.setItem('ledger_budget', JSON.stringify(budgetData.value));
+            localStorage.setItem('ledger_recurring', JSON.stringify(recurringTasks.value));
           } catch (e) {
             console.error('Storage error', e);
           }
@@ -1487,18 +1922,24 @@
             const savedT = localStorage.getItem('ledger_transactions');
             const savedA = localStorage.getItem('ledger_accounts');
             const savedB = localStorage.getItem('ledger_budget');
+            const savedR = localStorage.getItem('ledger_recurring');
 
             transactions.value = savedT ? JSON.parse(savedT) : SAMPLE_TRANSACTIONS;
             accounts.value = savedA ? JSON.parse(savedA) : INITIAL_ACCOUNTS;
             if (savedB) budgetData.value = JSON.parse(savedB);
+            recurringTasks.value = savedR ? JSON.parse(savedR) : [
+              { id: 'rec_1', name: '每月房租', type: 'expense', amount: 2800, category: '日常居家', accountId: 'cmb', frequency: 'monthly', dayOfMonth: 20, remark: '每月20日固定房租', lastExecutedDate: '2026-10-20' }
+            ];
           } catch (e) {
             transactions.value = SAMPLE_TRANSACTIONS;
             accounts.value = INITIAL_ACCOUNTS;
+            recurringTasks.value = [];
           }
         };
 
         onMounted(() => {
           loadData();
+          checkRecurringTasks();
           if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('./sw.js').catch(() => {});
           }
@@ -1919,6 +2360,8 @@
               name: editingAccount.value.name,
               type: editingAccount.value.type,
               balance: parseFloat(editingAccount.value.balance) || 0,
+              icon: editingAccount.value.icon || '🏦',
+              bgColor: editingAccount.value.bgColor || '#E0E7FF',
               remark: editingAccount.value.remark || ''
             };
             saveData();
@@ -1949,6 +2392,109 @@
           saveData();
           editingAccount.value = null;
           showToast(`已成功删除账户【${acc.name}】`);
+        };
+
+        const openRecurringModal = () => {
+          showAddRecurringForm.value = false;
+          showRecurringModal.value = true;
+        };
+
+        const saveNewRecurringTask = () => {
+          if (!newRecForm.value.name) {
+            showToast('请输入任务名称');
+            return;
+          }
+          if (!newRecForm.value.amount || Number(newRecForm.value.amount) <= 0) {
+            showToast('请输入有效的金额');
+            return;
+          }
+          recurringTasks.value.unshift({
+            id: 'rec_' + Date.now(),
+            name: newRecForm.value.name,
+            type: newRecForm.value.type,
+            amount: parseFloat(newRecForm.value.amount),
+            category: newRecForm.value.category,
+            accountId: newRecForm.value.accountId || accounts.value[0]?.id || 'wechat',
+            frequency: newRecForm.value.frequency,
+            dayOfMonth: parseInt(newRecForm.value.dayOfMonth, 10) || 1,
+            remark: newRecForm.value.remark || '',
+            lastExecutedDate: ''
+          });
+          saveData();
+          showAddRecurringForm.value = false;
+          showToast('定时任务已添加！');
+          checkRecurringTasks();
+        };
+
+        const executeRecurringTask = (task, dateStr, isAuto = false) => {
+          const amt = Number(task.amount);
+          const rec = {
+            id: 't_rec_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+            type: task.type,
+            amount: amt,
+            category: task.category,
+            accountId: task.accountId,
+            date: dateStr || new Date().toISOString().split('T')[0],
+            remark: `[定时${task.type === 'expense' ? '扣费' : '入账'}] ${task.name}` + (task.remark ? ` - ${task.remark}` : '')
+          };
+
+          const acc = accounts.value.find(a => a.id === task.accountId);
+          if (task.type === 'expense' && acc) {
+            acc.balance = Math.round((Number(acc.balance) - amt) * 100) / 100;
+          } else if (task.type === 'income' && acc) {
+            acc.balance = Math.round((Number(acc.balance) + amt) * 100) / 100;
+          }
+
+          transactions.value.unshift(rec);
+          task.lastExecutedDate = dateStr || new Date().toISOString().split('T')[0];
+          saveData();
+
+          if (!isAuto) {
+            showToast(`已成功执行：${task.name} ¥${amt}`);
+          }
+        };
+
+        const manualRunTask = (task) => {
+          executeRecurringTask(task, new Date().toISOString().split('T')[0], false);
+        };
+
+        const deleteRecurringTask = (task) => {
+          if (!confirm(`确定删除定时任务【${task.name}】吗？`)) return;
+          recurringTasks.value = recurringTasks.value.filter(t => t.id !== task.id);
+          saveData();
+          showToast('定时任务已删除');
+        };
+
+        const checkRecurringTasks = () => {
+          const now = new Date();
+          const todayStr = now.toISOString().split('T')[0];
+          const currentDay = now.getDate();
+          const currentYearMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+
+          let count = 0;
+          recurringTasks.value.forEach(task => {
+            let shouldRun = false;
+            if (task.frequency === 'monthly') {
+              if (currentDay >= task.dayOfMonth) {
+                if (!task.lastExecutedDate || !task.lastExecutedDate.startsWith(currentYearMonth)) {
+                  shouldRun = true;
+                }
+              }
+            } else if (task.frequency === 'daily') {
+              if (task.lastExecutedDate !== todayStr) {
+                shouldRun = true;
+              }
+            }
+
+            if (shouldRun) {
+              executeRecurringTask(task, todayStr, true);
+              count++;
+            }
+          });
+
+          if (count > 0) {
+            showToast(`⏱️ 自动执行了 ${count} 笔定时扣费与收入！`);
+          }
         };
 
         // Statistics Order Drill-down
@@ -2002,13 +2548,13 @@
             name: newAcc.value.name,
             type: newAcc.value.type,
             balance: parseFloat(newAcc.value.balance) || 0,
-            icon: newAcc.value.type === 'liability' ? '💳' : '🏦',
-            bgColor: newAcc.value.type === 'liability' ? '#FEF3C7' : '#E0E7FF',
-            remark: ''
+            icon: newAcc.value.icon || (newAcc.value.type === 'liability' ? '💳' : '🏦'),
+            bgColor: newAcc.value.bgColor || (newAcc.value.type === 'liability' ? '#FEF3C7' : '#DCFCE7'),
+            remark: newAcc.value.remark || ''
           });
           saveData();
           showAddAccountModal.value = false;
-          newAcc.value = { name: '', type: 'asset', balance: 0 };
+          newAcc.value = { name: '', type: 'asset', balance: 0, icon: '🏦', bgColor: '#DCFCE7', remark: '' };
           showToast('新账户添加成功');
         };
 
@@ -2226,6 +2772,18 @@
           openCategoryOrders,
           openDayOrders,
           saveNewAccount,
+          ACCOUNT_ICONS,
+          ACCOUNT_COLORS,
+          currentQuickTags,
+          recurringTasks,
+          showRecurringModal,
+          showAddRecurringForm,
+          newRecForm,
+          openRecurringModal,
+          saveNewRecurringTask,
+          manualRunTask,
+          deleteRecurringTask,
+          checkRecurringTasks,
           exportJSON,
           triggerImportJSON,
           handleFileImport,
