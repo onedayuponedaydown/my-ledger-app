@@ -1122,9 +1122,13 @@
 
         <!-- Meta Bar: Account, Date, Note -->
         <div class="meta-bar">
-          <div v-if="currentForm.type !== 'transfer'" class="meta-chip" @click="cycleAccount">
+          <div v-if="currentForm.type !== 'transfer'" class="meta-chip">
             <span>💳</span>
-            <span>{{ getAccountName(currentForm.accountId) }}</span>
+            <select v-model="currentForm.accountId" style="border: none; background: transparent; font-size: 0.82rem; font-weight: 600; color: #0F172A; outline: none; cursor: pointer;">
+              <option v-for="acc in accounts" :key="acc.id" :value="acc.id">
+                {{ acc.name }} (¥{{ formatNumber(acc.balance) }})
+              </option>
+            </select>
           </div>
           <div class="meta-chip">
             <span>📅</span>
@@ -1589,13 +1593,13 @@
           // Update balances
           const srcAcc = accounts.value.find(a => a.id === record.accountId);
           if (record.type === 'expense' && srcAcc) {
-            srcAcc.balance -= record.amount;
+            srcAcc.balance = Math.round((Number(srcAcc.balance) - record.amount) * 100) / 100;
           } else if (record.type === 'income' && srcAcc) {
-            srcAcc.balance += record.amount;
+            srcAcc.balance = Math.round((Number(srcAcc.balance) + record.amount) * 100) / 100;
           } else if (record.type === 'transfer') {
             const dstAcc = accounts.value.find(a => a.id === record.targetAccountId);
-            if (srcAcc) srcAcc.balance -= record.amount;
-            if (dstAcc) dstAcc.balance += record.amount;
+            if (srcAcc) srcAcc.balance = Math.round((Number(srcAcc.balance) - record.amount) * 100) / 100;
+            if (dstAcc) dstAcc.balance = Math.round((Number(dstAcc.balance) + record.amount) * 100) / 100;
           }
 
           transactions.value.unshift(record);
@@ -1613,13 +1617,13 @@
           // Rollback balance
           const srcAcc = accounts.value.find(a => a.id === item.accountId);
           if (item.type === 'expense' && srcAcc) {
-            srcAcc.balance += item.amount;
+            srcAcc.balance = Math.round((Number(srcAcc.balance) + item.amount) * 100) / 100;
           } else if (item.type === 'income' && srcAcc) {
-            srcAcc.balance -= item.amount;
+            srcAcc.balance = Math.round((Number(srcAcc.balance) - item.amount) * 100) / 100;
           } else if (item.type === 'transfer') {
             const dstAcc = accounts.value.find(a => a.id === item.targetAccountId);
-            if (srcAcc) srcAcc.balance += item.amount;
-            if (dstAcc) dstAcc.balance -= item.amount;
+            if (srcAcc) srcAcc.balance = Math.round((Number(srcAcc.balance) + item.amount) * 100) / 100;
+            if (dstAcc) dstAcc.balance = Math.round((Number(dstAcc.balance) - item.amount) * 100) / 100;
           }
 
           transactions.value = transactions.value.filter(t => t.id !== item.id);
