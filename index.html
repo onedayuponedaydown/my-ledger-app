@@ -835,19 +835,27 @@
             </svg>
           </div>
 
-          <!-- Breakdown List -->
+          <!-- Breakdown List (点击分类可查看具体订单明细) -->
           <div style="margin-top: 14px;">
             <div v-if="statBreakdown.length === 0" style="text-align: center; color: #94A3B8; padding: 20px 0; font-size: 0.85rem;">
               暂无分类数据
             </div>
-            <div v-for="item in statBreakdown" :key="item.category" style="margin-bottom: 12px;">
+            <div 
+              v-for="item in statBreakdown" 
+              :key="item.category" 
+              style="margin-bottom: 12px; cursor: pointer; padding: 4px 6px; border-radius: 10px; transition: background 0.15s;"
+              @click="openCategoryOrders(item.category)"
+            >
               <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
                 <span style="display: flex; align-items: center; gap: 6px;">
                   <span style="width: 10px; height: 10px; border-radius: 50%;" :style="{ background: item.color }"></span>
                   <span style="font-weight: 600;">{{ item.category }}</span>
                   <span style="color: #64748B; font-size: 0.75rem;">{{ item.percentage }}%</span>
                 </span>
-                <span style="font-weight: 700;">¥{{ formatNumber(item.amount) }}</span>
+                <span style="display: flex; align-items: center; gap: 4px;">
+                  <span style="font-weight: 700;">¥{{ formatNumber(item.amount) }}</span>
+                  <span style="color: #94A3B8; font-size: 0.85rem;">›</span>
+                </span>
               </div>
               <div class="progress-bar-bg" style="margin: 0;">
                 <div class="progress-fill" :style="{ width: item.percentage + '%', background: item.color }"></div>
@@ -856,28 +864,32 @@
           </div>
         </div>
 
-        <!-- Daily Spending Bar Chart -->
-        <div class="stat-card">
-          <div class="card-title">每日收支走势</div>
-          <div style="display: flex; align-items: flex-end; gap: 4px; height: 120px; padding-top: 10px; overflow-x: auto;">
-            <div 
-              v-for="d in statDailyBars" 
-              :key="d.day" 
-              style="flex: 1; min-width: 12px; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end;"
-            >
+          <!-- Daily Spending Bar Chart (点击柱状可查看当天账单) -->
+          <div class="stat-card">
+            <div class="card-title">
+              <span>每日收支走势</span>
+              <span style="font-size: 0.75rem; color: #64748B;">点击柱状可查看当天明细</span>
+            </div>
+            <div style="display: flex; align-items: flex-end; gap: 4px; height: 120px; padding-top: 10px; overflow-x: auto;">
               <div 
-                :style="{ 
-                  height: d.heightPercent + '%', 
-                  backgroundColor: d.amount > 0 ? (statTab === 'expense' ? '#3B82F6' : '#10B981') : '#F1F5F9',
-                  width: '100%',
-                  borderRadius: '3px 3px 0 0'
-                }"
-                :title="`${d.day}日: ¥${d.amount}`"
-              ></div>
-              <span style="font-size: 0.6rem; color: #94A3B8; margin-top: 4px;">{{ d.day }}</span>
+                v-for="d in statDailyBars" 
+                :key="d.day" 
+                style="flex: 1; min-width: 14px; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; cursor: pointer;"
+                @click="d.amount > 0 && openDayOrders(d.day)"
+              >
+                <div 
+                  :style="{ 
+                    height: d.heightPercent + '%', 
+                    backgroundColor: d.amount > 0 ? (statTab === 'expense' ? '#3B82F6' : '#10B981') : '#F1F5F9',
+                    width: '100%',
+                    borderRadius: '4px 4px 0 0'
+                  }"
+                  :title="`${d.day}日: ¥${d.amount}`"
+                ></div>
+                <span style="font-size: 0.6rem; color: #94A3B8; margin-top: 4px;">{{ d.day }}</span>
+              </div>
             </div>
           </div>
-        </div>
       </div>
 
       <!-- TAB 3: 预算 (Budget) -->
@@ -974,8 +986,11 @@
 
         <!-- Account List -->
         <div class="stat-card">
-          <div class="card-title">资金账户列表</div>
-          <div v-for="acc in accounts" :key="acc.id" class="trans-item" style="padding: 12px 0;" @click="editAccountPrompt(acc)">
+          <div class="card-title">
+            <span>资金账户列表</span>
+            <span style="font-size: 0.75rem; color: #64748B;">点击任意账户可修改或删除</span>
+          </div>
+          <div v-for="acc in accounts" :key="acc.id" class="trans-item" style="padding: 12px 0;" @click="openEditAccount(acc)">
             <div class="item-icon" :style="{ backgroundColor: acc.bgColor || '#E0E7FF' }">
               {{ acc.icon || '💰' }}
             </div>
@@ -988,8 +1003,9 @@
               </div>
               <div class="item-remark">卡号/备注: {{ acc.remark || '默认主账户' }}</div>
             </div>
-            <div class="item-amount" :style="{ color: acc.balance >= 0 ? '#0F172A' : '#EF4444' }">
-              ¥{{ formatNumber(acc.balance) }}
+            <div class="item-amount" style="display: flex; align-items: center; gap: 4px;">
+              <span :style="{ color: acc.balance >= 0 ? '#0F172A' : '#EF4444' }">¥{{ formatNumber(acc.balance) }}</span>
+              <span style="font-size: 0.85rem; color: #94A3B8;">›</span>
             </div>
           </div>
         </div>
@@ -1230,6 +1246,85 @@
       </div>
     </div>
 
+    <!-- EDIT ACCOUNT MODAL (管理与删除账户) -->
+    <div v-if="editingAccount" class="modal-overlay" @click.self="editingAccount = null">
+      <div class="sheet-container" style="padding: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <h3 style="font-size: 1.1rem; font-weight: 700;">管理账户</h3>
+          <button class="close-btn" @click="editingAccount = null">✕</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div>
+            <label style="font-size: 0.8rem; color: #64748B;">账户名称</label>
+            <input type="text" v-model="editingAccount.name" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 600;">
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: #64748B;">账户类型</label>
+            <select v-model="editingAccount.type" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 600;">
+              <option value="asset">资产账户（储蓄卡、微信、支付宝、现金）</option>
+              <option value="liability">负债账户（信用卡、花呗、欠款）</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: #64748B;">当前余额 (元)</label>
+            <input type="number" step="0.01" v-model.number="editingAccount.balance" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px; font-weight: 700; font-size: 1.1rem;">
+          </div>
+          <div>
+            <label style="font-size: 0.8rem; color: #64748B;">卡号 / 备注说明</label>
+            <input type="text" v-model="editingAccount.remark" placeholder="如：后四位1234、工资卡" style="width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--border); margin-top: 4px;">
+          </div>
+
+          <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
+            <button class="btn-block btn-primary" @click="saveEditAccount">💾 保存修改</button>
+            <button class="btn-block btn-danger" @click="deleteAccount(editingAccount)">🗑️ 删除该账户</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAT ORDERS MODAL (统计中点击分类或某一天查看具体订单) -->
+    <div v-if="statOrdersModal.visible" class="modal-overlay" @click.self="statOrdersModal.visible = false">
+      <div class="sheet-container" style="padding: 22px 20px 28px 20px; max-height: 82vh;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <div>
+            <h3 style="font-size: 1.1rem; font-weight: 700;">{{ statOrdersModal.title }}</h3>
+            <div style="font-size: 0.78rem; color: #64748B; margin-top: 2px;">
+              共 {{ statOrdersList.length }} 笔明细 · 合计 ¥{{ formatNumber(statOrdersTotal) }}
+            </div>
+          </div>
+          <button class="close-btn" @click="statOrdersModal.visible = false">✕</button>
+        </div>
+
+        <div style="max-height: 60vh; overflow-y: auto;">
+          <div v-if="statOrdersList.length === 0" style="text-align: center; color: #94A3B8; padding: 30px 0;">
+            暂无记录
+          </div>
+          <div 
+            v-for="item in statOrdersList" 
+            :key="item.id" 
+            class="trans-item" 
+            style="padding: 10px 4px; cursor: pointer;"
+            @click="openItemDetail(item)"
+          >
+            <div class="item-icon" :style="{ backgroundColor: getCategoryBg(item) }">
+              {{ getCategoryIcon(item) }}
+            </div>
+            <div class="item-info">
+              <div class="item-title">
+                <span>{{ item.remark || item.category }}</span>
+                <span class="item-acc-tag">{{ getAccountName(item.accountId) }}</span>
+              </div>
+              <div class="item-remark">{{ item.date }} · {{ item.category }}</div>
+            </div>
+            <div class="item-amount" :class="item.type === 'expense' ? 'amount-expense' : 'amount-income'">
+              {{ item.type === 'expense' ? '-' : '+' }}¥{{ formatNumber(item.amount) }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- MONTH PICKER MODAL -->
     <div v-if="showMonthPickerModal" class="modal-overlay" @click.self="showMonthPickerModal = false">
       <div class="sheet-container" style="padding: 22px 20px 28px 20px;">
@@ -1343,6 +1438,13 @@
         const showRecordModal = ref(false);
         const selectedItem = ref(null);
         const showAddAccountModal = ref(false);
+        const editingAccount = ref(null);
+        const statOrdersModal = ref({
+          visible: false,
+          title: '',
+          filterType: '',
+          filterValue: null
+        });
         const fileInput = ref(null);
 
         const currentForm = ref({
@@ -1801,13 +1903,93 @@
           return totalAssets.value - totalLiabilities.value;
         });
 
-        const editAccountPrompt = (acc) => {
-          const val = prompt(`修改 [${acc.name}] 当前余额 (元):`, acc.balance);
-          if (val !== null && !isNaN(val)) {
-            acc.balance = parseFloat(val);
-            saveData();
-            showToast('账户余额已更新');
+        const openEditAccount = (acc) => {
+          editingAccount.value = { ...acc };
+        };
+
+        const saveEditAccount = () => {
+          if (!editingAccount.value || !editingAccount.value.name) {
+            showToast('账户名称不能为空');
+            return;
           }
+          const idx = accounts.value.findIndex(a => a.id === editingAccount.value.id);
+          if (idx !== -1) {
+            accounts.value[idx] = {
+              ...accounts.value[idx],
+              name: editingAccount.value.name,
+              type: editingAccount.value.type,
+              balance: parseFloat(editingAccount.value.balance) || 0,
+              remark: editingAccount.value.remark || ''
+            };
+            saveData();
+            editingAccount.value = null;
+            showToast('账户信息已更新！');
+          }
+        };
+
+        const deleteAccount = (acc) => {
+          if (accounts.value.length <= 1) {
+            showToast('⚠️ 系统至少需保留一个账户，无法删除！');
+            return;
+          }
+          const relatedCount = transactions.value.filter(t => t.accountId === acc.id || t.targetAccountId === acc.id).length;
+          const msg = relatedCount > 0 
+            ? `确定要删除账户【${acc.name}】吗？\n该账户包含 ${relatedCount} 笔关联账单（删除后历史记录仍会保留）。`
+            : `确定要删除账户【${acc.name}】吗？`;
+
+          if (!confirm(msg)) return;
+
+          accounts.value = accounts.value.filter(a => a.id !== acc.id);
+          if (currentForm.value.accountId === acc.id) {
+            currentForm.value.accountId = accounts.value[0].id;
+          }
+          if (currentForm.value.targetAccountId === acc.id) {
+            currentForm.value.targetAccountId = accounts.value[0].id;
+          }
+          saveData();
+          editingAccount.value = null;
+          showToast(`已成功删除账户【${acc.name}】`);
+        };
+
+        // Statistics Order Drill-down
+        const statOrdersList = computed(() => {
+          if (!statOrdersModal.value.visible) return [];
+          if (statOrdersModal.value.filterType === 'category') {
+            return currentMonthTransactions.value.filter(t => 
+              t.type === statTab.value && t.category === statOrdersModal.value.filterValue
+            );
+          } else if (statOrdersModal.value.filterType === 'day') {
+            const dStr = String(statOrdersModal.value.filterValue).padStart(2, '0');
+            const targetPrefix = `${currentYear.value}-${String(currentMonth.value).padStart(2, '0')}-${dStr}`;
+            return currentMonthTransactions.value.filter(t => 
+              t.type === statTab.value && t.date.startsWith(targetPrefix)
+            );
+          }
+          return [];
+        });
+
+        const statOrdersTotal = computed(() => {
+          return statOrdersList.value.reduce((sum, item) => sum + Number(item.amount), 0);
+        });
+
+        const openCategoryOrders = (catName) => {
+          const typeName = statTab.value === 'expense' ? '支出' : '收入';
+          statOrdersModal.value = {
+            visible: true,
+            title: `${catName} · ${typeName}明细`,
+            filterType: 'category',
+            filterValue: catName
+          };
+        };
+
+        const openDayOrders = (day) => {
+          const typeName = statTab.value === 'expense' ? '支出' : '收入';
+          statOrdersModal.value = {
+            visible: true,
+            title: `${currentMonth.value}月${day}日 · ${typeName}明细`,
+            filterType: 'day',
+            filterValue: day
+          };
         };
 
         const saveNewAccount = () => {
@@ -2034,7 +2216,15 @@
           totalAssets,
           totalLiabilities,
           netAssets,
-          editAccountPrompt,
+          editingAccount,
+          openEditAccount,
+          saveEditAccount,
+          deleteAccount,
+          statOrdersModal,
+          statOrdersList,
+          statOrdersTotal,
+          openCategoryOrders,
+          openDayOrders,
           saveNewAccount,
           exportJSON,
           triggerImportJSON,
